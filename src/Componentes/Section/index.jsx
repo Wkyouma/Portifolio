@@ -1,12 +1,11 @@
-const Section = ({ children, backgroundUrl }) => {
+import { Element } from 'react-scroll';
+const Section = ({ children, id }) => {
     return (
-        <section
-            className="h-auto sm:h-screen  text-white flex flex-col bg-stone-900 "
-        >
-            
-            
+        <Element name={id} className="h-auto sm:h-screen  text-white flex flex-col bg-stone-900 "> 
+            <div className='border m-2 h-screen'>
             {children}
-        </section>
+            </div>
+        </Element>
     );
 };
 

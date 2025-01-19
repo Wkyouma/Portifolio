@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import Titulo from '../../Componentes/Titulo';
 import Subtitulo from '../../Componentes/Subtitulo';
@@ -17,6 +18,7 @@ const backgrounds = [
 ];
 
 const Home = () => {
+
     const [background, setBackground] = useState(backgrounds[0]);
     const [scrolling, setScrolling] = useState(false);
 
@@ -25,15 +27,14 @@ const Home = () => {
             const randomIndex = Math.floor(Math.random() * backgrounds.length);
             setBackground(backgrounds[randomIndex]);
         }, 2000);
-
+    
         return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Aumente o valor aqui para um efeito mais sutil
             const scrollY = window.scrollY;
-            if (scrollY > 700) { // Aumente este valor conforme necessário
+            if (scrollY > 700) { 
                 setScrolling(true);
             } else {
                 setScrolling(false);
@@ -48,14 +49,17 @@ const Home = () => {
 
     return (
         <div className="relative z-0">
+            <Element name='Home'>
             <div 
-               className={`h-[200vh] bg-cover bg-center relative duration-300 ${scrolling ? 'bg-stone-900' : ''}`}
+               className={`h-[100vh] bg-cover bg-center relative transition-colors duration-300  ${scrolling ? 'bg-stone-900' : ''}`}
                 style={{ 
                     backgroundImage: scrolling ? 'none' : background,
                     backgroundAttachment: scrolling ? 'scroll' : 'fixed',
                 }}
             >
-                <div className="absolute inset-0 max-h-screen flex justify-center items-center flex-col text-center p-4 z-10">
+                <div className="absolute inset-0 m-2 max-h-svh flex justify-center items-center flex-col text-center z-10 border
+                "
+                style={{ backgroundAttachment: scrolling ? 'scroll' : 'fixed',}}>
                     <Titulo>Igor <span className='text-green-300'>Terplak</span></Titulo>
                     <Subtitulo className="text-lg md:text-2xl">Desenvolvedor Front-end | Designer Criativo</Subtitulo>
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
@@ -86,10 +90,12 @@ const Home = () => {
                             Contato
                         </motion.button>
                     </div>
+                    <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-4xl text-white z-10">WELCOME</h1>
                 </div>
             </div>
+            </Element>
             
-            <Section className="relative z-10">
+            <Section id="Habilidades" >
                 <div className="w-full mx-auto px-4 text-center">
                     <div className="mt-5 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
                         <Card><Subtitulo>Frontend</Subtitulo><p>React, Vue, Tailwind</p></Card>
@@ -99,9 +105,10 @@ const Home = () => {
                     </div>
                 </div>
             </Section>
-            <Section>
-                <Titulo>Projetos Recentes</Titulo>
-            </Section>
+                <Section id="projetos" >
+                    <Titulo>Projetos Recentes</Titulo>
+                </Section>
+           
         </div>
     );
 }
