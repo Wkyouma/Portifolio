@@ -18,6 +18,7 @@ const backgrounds = [
 
 const Home = () => {
     const [background, setBackground] = useState(backgrounds[0]);
+    const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -28,41 +29,57 @@ const Home = () => {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            // Aumente o valor aqui para um efeito mais sutil
+            const scrollY = window.scrollY;
+            if (scrollY > 700) { // Aumente este valor conforme necessário
+                setScrolling(true);
+            } else {
+                setScrolling(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div className="relative z-0">
             <div 
-                className="h-screen bg-cover bg-center relative" 
+               className={`h-[200vh] bg-cover bg-center relative duration-300 ${scrolling ? 'bg-stone-900' : ''}`}
                 style={{ 
-                    backgroundImage: background,
-                    backgroundAttachment: 'fixed',
+                    backgroundImage: scrolling ? 'none' : background,
+                    backgroundAttachment: scrolling ? 'scroll' : 'fixed',
                 }}
             >
-                <div className="absolute inset-0 bg-green-900 opacity-30 z-0"></div>
-                <div className="absolute inset-0 flex justify-center items-center flex-col text-center p-4 z-10">
+                <div className="absolute inset-0 max-h-screen flex justify-center items-center flex-col text-center p-4 z-10">
                     <Titulo>Igor <span className='text-green-300'>Terplak</span></Titulo>
                     <Subtitulo className="text-lg md:text-2xl">Desenvolvedor Front-end | Designer Criativo</Subtitulo>
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
                         <motion.button
-                         initial={{ opacity: 0, x: -100 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         transition={{
-                             duration: 0.3,
-                             ease: "circIn",
-                             delay: 0.5
-                         }}
+                            initial={{ opacity: 0, x: -100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 0.3,
+                                ease: "circIn",
+                                delay: 0.5
+                            }}
                             href="#projetos" 
                             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition duration-300 z-20"
                         >
                             Ver Projetos
                         </motion.button>
                         <motion.button
-                         initial={{ opacity: 0, x: 100 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         transition={{
-                             duration: 0.3,
-                             ease: "backInOut",
-                             delay: 0.5
-                         }}
+                            initial={{ opacity: 0, x: 100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 0.3,
+                                ease: "backInOut",
+                                delay: 0.5
+                            }}
                             href="#contato" 
                             className="border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition duration-300 z-20"
                         >
@@ -71,11 +88,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Section className="relative z-10">
             
-               
+            <Section className="relative z-10">
                 <div className="w-full mx-auto px-4 text-center">
-                   
                     <div className="mt-5 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
                         <Card><Subtitulo>Frontend</Subtitulo><p>React, Vue, Tailwind</p></Card>
                         <Card><Subtitulo>Backend</Subtitulo><p>Node.js, Express, MongoDB</p></Card>
@@ -86,7 +101,6 @@ const Home = () => {
             </Section>
             <Section>
                 <Titulo>Projetos Recentes</Titulo>
-                
             </Section>
         </div>
     );
