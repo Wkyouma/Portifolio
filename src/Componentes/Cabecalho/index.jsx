@@ -12,9 +12,9 @@ const Cabecalho = () => {
     };
 
     return (
-        <header className="w-full fixed top-0 left-0 z-50 bg-transparent">
+        <header className="w-full fixed top-0 left-0 z-50 bg-transparent ">
             <nav className="flex justify-between items-center p-4">
-                <ul className="flex space-x-4 m-1 text-white">
+                <ul className="cursor-pointer flex space-x-4 m-1 text-white gap-4 ">
                     <li><Link to="Home" smooth={true} duration={500} className="hover:text-green-400">Home </Link></li>
                     <li><Link to="projetos" smooth={true} duration={500} className="hover:text-green-400">Projetos </Link></li>
                     <li className="hover:text-green-400" > Contato </li>
