@@ -8,38 +8,26 @@ const TechIcons = () => {
     const technologies = [
         { 
             Icon: FaReact, 
-            color: 'text-green-500', 
-            bgHover: 'hover:bg-green-100',
             name: 'React',
         },
         { 
             Icon: RiTailwindCssFill, 
-            color: 'text-green-600', 
-            bgHover: 'hover:bg-green-100',
             name: 'Tailwind',
         },
         { 
             Icon: FaJs, 
-            color: 'text-green-500', 
-            bgHover: 'hover:bg-green-100',
             name: 'JavaScript',
         },
         { 
             Icon: SiTypescript, 
-            color: 'text-green-600', 
-            bgHover: 'hover:bg-green-100',
             name: 'TypeScript',
         },
         { 
             Icon: FaPython, 
-            color: 'text-green-700', 
-            bgHover: 'hover:bg-green-100',
             name: 'Python',
         },
         { 
             Icon: FaNodeJs, 
-            color: 'text-green-600', 
-            bgHover: 'hover:bg-green-100',
             name: 'Node.js',
         },
     ];
@@ -58,7 +46,7 @@ const TechIcons = () => {
                                 flex items-center justify-center 
                                 transition-all duration-300 ease-in-out
                                 transform hover:scale-110
-                                ${tech.bgHover}
+                                hover:bg-gray-800
                                 cursor-pointer
                                 shadow-md hover:shadow-xl
                             `}
@@ -66,7 +54,7 @@ const TechIcons = () => {
                             <tech.Icon 
                                 size={50} 
                                 className={`
-                                    ${tech.color} 
+                                    text-green-500
                                     transition-transform duration-300 
                                     group-hover:rotate-6
                                 `}

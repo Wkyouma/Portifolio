@@ -1,0 +1,13 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Digital7';
+    src: url('./assets/digital_7/digital_7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

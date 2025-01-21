@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
-
+    
     return (
         <motion.div 
             className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center"
@@ -15,7 +15,6 @@ const Modal = ({ isOpen, onClose }) => {
         >
             <div 
                 className="bg-transparent p-6 rounded shadow-lg">
-           
                 <ul className="flex flex-col text-4xl font-mono space-y-2 z-10">
                     <motion.li
                     initial={{ opacity: 0, x: -100 }}
@@ -62,7 +61,7 @@ const Modal = ({ isOpen, onClose }) => {
                  initial={{ opacity: 0, x: -100 }}
                  animate={{ opacity: 1, x: 1 }}
                  transition={{ 
-                     duration: 0.3, 
+                     duration: 0.1, 
                      ease: "backInOut",
                      delay: 1.0
                  }}

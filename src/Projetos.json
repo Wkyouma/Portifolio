@@ -1,0 +1,12 @@
+[
+    {
+        "title": "projeto 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": "./Galeria/anime.gif"
+    },
+    {
+        "title": "projeto 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": "./Galeria/Eva.gif"
+    }
+]

@@ -1,10 +1,13 @@
 module.exports = {
   content: [
-      "./index.html",
-      "./src/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-      extend: {},
+    extend: {
+      fontFamily: {
+        digital: ['Digital-7'], // ou 'Digital7', dependendo do nome
+      },
+    },
   },
   plugins: [],
 }
