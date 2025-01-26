@@ -1,6 +1,4 @@
 import { Element } from 'react-scroll';
-import { motion } from 'framer-motion';
-import { twMerge } from 'tailwind-merge';
 import Titulo from '../../Componentes/Titulo';
 import Subtitulo from '../../Componentes/Subtitulo';
 import Section from '../../Componentes/Section';
