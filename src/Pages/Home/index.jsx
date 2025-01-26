@@ -4,25 +4,34 @@ import Subtitulo from '../../Componentes/Subtitulo';
 import Section from '../../Componentes/Section';
 import TechIcons from '../../Componentes/TechIcons';
 import Card from '../../Componentes/Section/ProjetoSection';
-import useRandomBackground from '../../hooks/index'; 
+import useRandomBackground from '../../Hooks/index'
 import ProjetoData from '../../Projetos.json'
 import Formulario from '../../Componentes/Formulario';
 import Button from '../../Componentes/Button';
+import retroOld from '/Galeria/retro-old.gif';
+import cowboy from '/Galeria/cowboy.gif';
+import retro from '/Galeria/retro.gif';
+import ashita from '/Galeria/Ashita.gif';
+import anime from '/Galeria/anime.gif';
+import lain from '/Galeria/lain.gif';
+import cyber from '/Galeria/Cyber.gif';
+import asImage from '/Galeria/as.gif';
+import Teclar from '/Galeria/teclar.gif';
 
 
 const backgrounds = [
-    'url(./Galeria/retro-old.gif)',
-    'url(./Galeria/cowboy.gif)',
-    'url(./Galeria/retro.gif)',
-    'url(./Galeria/Ashita.gif)',
-    'url(./Galeria/anime.gif)',
-    'url(./Galeria/lain.gif)',
-    'url(./Galeria/Cyber.gif)',
-    'url(./Galeria/as.gif)',
+    `url(${retroOld})`,
+    `url(${cowboy})`,
+    `url(${retro})`,
+    `url(${ashita})`,
+    `url(${anime})`,
+    `url(${lain})`,
+    `url(${cyber})`,
+    `url(${asImage})`,
 ];
 
 const secondBackgrounds = [
-    'url(./Galeria/teclar.gif)',
+    `url(${Teclar})`,
 ];
 
 const Home = () => {
