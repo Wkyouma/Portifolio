@@ -19,7 +19,7 @@ const Carousel = ({ images }) => {
     }
 
     return (
-        <div className="relative w-96 overflow-hidden">
+        <div className="relative w-72 sm:w-96 overflow-hidden">
             <img 
                 src={images[currentIndex]} 
                 alt={`Slide ${currentIndex + 1}`}

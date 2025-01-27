@@ -38,7 +38,7 @@ const Home = () => {
     const secondBackground = useRandomBackground(secondBackgrounds, 3000);
 
     return (
-        <div className="relative z-0 bg-gradient-to-t from-zinc-900 to-black">
+        <div className="relative z-0 bg-gradient-to-t from-zinc-900 to-black ">
             <Element name='Home'>
                 <div 
                     className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
@@ -81,6 +81,7 @@ const Home = () => {
                         key={index} 
                         title={Projeto.title} 
                         description={Projeto.description} 
+                        Link={Projeto.link}
                         images={Projeto.images} 
                     />
                 ))}
@@ -89,7 +90,7 @@ const Home = () => {
 
             <Section id="contato">
                 <div 
-                    className={`w-full h-[80vh] sm:h-[70vh] bg-cover bg-center relative transition-colors duration-300`}
+                    className={`w-full h-[80vh] sm:h-screen bg-cover bg-center relative transition-colors duration-300`}
                     style={{ 
                         backgroundImage: secondBackground,
                         backgroundAttachment: 'fixed',

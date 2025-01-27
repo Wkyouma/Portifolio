@@ -1,8 +1,8 @@
 [
     {
         "title": "Plak",
-        "description": "Descrição do projeto",
-        "link": "Link do projeto",
+        "description": "Site de Animes",
+        "link": "https://plakanimes.vercel.app",
         "images": [
           "./Galeria/Plak1 (1).png",
           "./Galeria/Plak1 (2).png"
@@ -10,8 +10,8 @@
       },
       {
         "title": "Yunli",
-        "description": "Descrição do projeto",
-        "link": "Link do projeto",
+        "description": "Site de um artista",
+        "link": "https://yun-li-page.vercel.app",
         "images": [
          "./Galeria/Yunli (1).png",
           "./Galeria/Yunli (2).png"
@@ -20,8 +20,8 @@
       ,
       {
         "title": "CookUp",
-        "description": "Descrição do projeto",
-        "link": "Link do projeto",
+        "description": "Site de receitas",
+        "link": "https://cookup-sigma.vercel.app",
         "images": [
          "./Galeria/CookUp (1).png",
           "./Galeria/CookUp (2).png"
@@ -31,7 +31,7 @@
       {
         "title": "RpgMaker",
         "description": "Descrição do projeto",
-        "link": "Link do projeto",
+        "link": "https://rpgmaker-with-typescript.vercel.app",
         "images": [
          "./Galeria/RpgMaker (1).png",
           "./Galeria/RpgMaker (2).png"

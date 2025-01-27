@@ -5,7 +5,7 @@ const Button = ({ children, primeiro, segundo, direcao, delay, href }) => {
     return (
         <motion.a
             href={href}
-            target="_blank" // Abre o link em uma nova guia
+            target="_blank"
             initial={{ opacity: 0, x: direcao }}
             animate={{ opacity: 1, x: 0 }}
             transition={{

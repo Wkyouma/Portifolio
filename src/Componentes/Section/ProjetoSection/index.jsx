@@ -2,16 +2,16 @@
 import Button from "../../Button";
 import Carousel from "../../Carrousel";
 
-const Card = ({ title, description, images }) => {
+const Card = ({ title, description, images, Link }) => {
     return (
         <section className="flex flex-col sm:flex-row justify-between items-center p-8 rounded-3xl space-y-6 gap-7 sm:space-y-0">
-            <div className="w-full sm:w-96 p-6 border rounded-lg">
+            <div className="w-72 sm:w-80 p-6 border rounded-lg">
                 <h2 className="text-xl sm:text-2xl font-bold mb-4">Uma Jornada Incrível</h2>
                 <p className="leading-relaxed text-sm sm:text-base">
                    {description}
                 </p>
                 <div className="flex gap-3 justify-center items-center mt-4">
-                    <Button href='https://github.com/Wkyouma/Portifolio' primeiro={true} segundo={false} direcao={null} delay={null}>Visitar</Button>
+                    <Button href={Link} primeiro={true} segundo={false} direcao={null} delay={null}>Visitar</Button>
                     <Button href='https://github.com/Wkyouma/Portifolio' primeiro={false} segundo={true} direcao={null} delay={null}>Github</Button>
                 </div>
             </div>
