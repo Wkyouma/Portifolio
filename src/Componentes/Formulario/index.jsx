@@ -1,6 +1,5 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import Button from "../Button";
 import Input from "../Input";
 
 const Formulario = () => {
