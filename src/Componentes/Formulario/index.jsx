@@ -46,7 +46,7 @@ const Formulario = () => {
     };
 
     return (
-        <div className="bg-zinc-900 h-auto w-96 rounded-md flex flex-col justify-center">
+        <div className="bg-zinc-900 h-auto w-96 rounded-md flex flex-col justify-center m-5">
             <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2">Entre em Contato</h2>
             <form className="flex flex-col m-5 gap-6 items-center" onSubmit={handleSubmit}>
                 <Input

@@ -17,6 +17,7 @@ import lain from '/Galeria/lain.gif';
 import cyber from '/Galeria/Cyber.gif';
 import asImage from '/Galeria/as.gif';
 import Teclar from '/Galeria/teclar.gif';
+import AboutSection from '../../Componentes/Section/AboutSection';
 
 const backgrounds = [
     `url(${retroOld})`,
@@ -87,16 +88,17 @@ const Home = () => {
                 ))}
                 </div>
             </Section>
+            <AboutSection></AboutSection>
 
             <Section id="contato">
                 <div 
-                    className={`w-full h-[80vh] sm:h-screen bg-cover bg-center relative transition-colors duration-300`}
+                    className={`w-full h-[80vh] sm:h-auto sm:min-h-screen bg-cover bg-center relative transition-colors duration-300 `}
                     style={{ 
                         backgroundImage: secondBackground,
                         backgroundAttachment: 'fixed',
                     }}
                 >
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex justify-center sm:h-auto sm:min-h-screen items-center border m-2">
                         <Formulario />
                     </div>
                 </div>
