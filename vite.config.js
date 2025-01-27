@@ -6,10 +6,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, './src'),
       '@emailjs/browser': path.resolve(__dirname, 'node_modules/@emailjs/browser')
     }
   },
-  optimizeDeps: {
-    include: ['@emailjs/browser']
+  build: {
+    rollupOptions: {
+      external: ['@emailjs/browser']
+    }
   }
 })

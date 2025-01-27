@@ -6,17 +6,11 @@ const Formulario = () => {
     const [status, setStatus] = useState(""); 
     const form = useRef();
 
-    // Carregamento dinâmico do EmailJS
     useEffect(() => {
-        const loadEmailJS = async () => {
-            try {
-                await import('@emailjs/browser');
-            } catch (error) {
-                console.error("Erro ao carregar EmailJS", error);
-            }
-        };
-
-        loadEmailJS();
+        // Inicializa EmailJS se estiver disponível globalmente
+        if (window.emailjs) {
+            window.emailjs.init("lSHwsmqh4Rb6FRMPB");
+        }
     }, []);
 
     const handleChange = (e) => {
@@ -28,35 +22,30 @@ const Formulario = () => {
         e.preventDefault();
 
         try {
-            // Importação dinâmica
-            const emailjs = await import('@emailjs/browser');
-
-            emailjs.default.send(
-                "service_knui4xj", 
-                "template_6zq9zux", 
-                {
-                    nome: formData.nome,       
-                    email: formData.email,      
-                    mensagem: formData.mensagem 
-                },
-                "lSHwsmqh4Rb6FRMPB"
-            )
-            .then(
-                (result) => {
-                    setStatus("Email enviado com sucesso!");
-                    setFormData({ nome: "", email: "", mensagem: "" }); 
-                    console.log("Sucesso:", result.text);
-                },
-                (error) => {
-                    console.error("Erro ao enviar email:", error);
-                    setStatus("Erro ao enviar email.");
-                }
-            );
-        } catch (error) {
-            console.error("Erro ao carregar EmailJS:", error);
-            
-            // Fallback para envio via fetch
-            try {
+            // Tenta usar o EmailJS global
+            if (window.emailjs) {
+                window.emailjs.send(
+                    "service_knui4xj", 
+                    "template_6zq9zux", 
+                    {
+                        nome: formData.nome,       
+                        email: formData.email,      
+                        mensagem: formData.mensagem 
+                    }
+                )
+                .then(
+                    (result) => {
+                        setStatus("Email enviado com sucesso!");
+                        setFormData({ nome: "", email: "", mensagem: "" }); 
+                        console.log("Sucesso:", result.text);
+                    },
+                    (error) => {
+                        console.error("Erro ao enviar email:", error);
+                        setStatus("Erro ao enviar email.");
+                    }
+                );
+            } else {
+                // Fallback para fetch
                 const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                     method: 'POST',
                     headers: {
@@ -80,10 +69,10 @@ const Formulario = () => {
                 } else {
                     setStatus("Erro ao enviar email.");
                 }
-            } catch (fetchError) {
-                console.error("Erro no fallback de envio:", fetchError);
-                setStatus("Erro crítico ao enviar email.");
             }
+        } catch (error) {
+            console.error("Erro fatal:", error);
+            setStatus("Erro ao enviar email. Tente novamente.");
         }
     };
 
