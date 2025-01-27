@@ -50,7 +50,7 @@ const Formulario = () => {
             <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2">Entre em Contato</h2>
             <form className="flex flex-col m-5 gap-6 items-center" onSubmit={handleSubmit}>
                 <Input
-                    label="Nome:"
+                    Label="Nome:"
                     name="nome"
                     placeholder="Digite seu nome"
                     value={formData.nome}
@@ -58,7 +58,7 @@ const Formulario = () => {
                     required
                 />
                 <Input
-                    label="Email:"
+                    Label="Email:"
                     name="email"
                     placeholder="Digite seu email"
                     value={formData.email}
