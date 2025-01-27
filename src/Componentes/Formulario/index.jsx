@@ -1,40 +1,90 @@
-import { useState } from "react";
-import * as emailjs from '@emailjs/browser';
+import React, { useState, useRef, useEffect } from "react";
 import Input from "../Input";
 
 const Formulario = () => {
     const [formData, setFormData] = useState({ nome: "", email: "", mensagem: "" });
-    const [status, setStatus] = useState(""); // Para exibir mensagens de status
+    const [status, setStatus] = useState(""); 
+    const form = useRef();
+
+    // Carregamento dinâmico do EmailJS
+    useEffect(() => {
+        const loadEmailJS = async () => {
+            try {
+                await import('@emailjs/browser');
+            } catch (error) {
+                console.error("Erro ao carregar EmailJS", error);
+            }
+        };
+
+        loadEmailJS();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        emailjs
-            .send(
-                "service_knui4xj", //Service ID
-                "template_6zq9zux", //Template ID
+        try {
+            // Importação dinâmica
+            const emailjs = await import('@emailjs/browser');
+
+            emailjs.default.send(
+                "service_knui4xj", 
+                "template_6zq9zux", 
                 {
                     nome: formData.nome,       
                     email: formData.email,      
                     mensagem: formData.mensagem 
                 },
-                "lSHwsmqh4Rb6FRMPB" //Public Key
+                "lSHwsmqh4Rb6FRMPB"
             )
             .then(
                 (result) => {
                     setStatus("Email enviado com sucesso!");
                     setFormData({ nome: "", email: "", mensagem: "" }); 
+                    console.log("Sucesso:", result.text);
                 },
                 (error) => {
                     console.error("Erro ao enviar email:", error);
                     setStatus("Erro ao enviar email.");
                 }
             );
+        } catch (error) {
+            console.error("Erro ao carregar EmailJS:", error);
+            
+            // Fallback para envio via fetch
+            try {
+                const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        service_id: 'service_knui4xj',
+                        template_id: 'template_6zq9zux',
+                        user_id: 'lSHwsmqh4Rb6FRMPB',
+                        template_params: {
+                            nome: formData.nome,
+                            email: formData.email,
+                            mensagem: formData.mensagem
+                        }
+                    })
+                });
+
+                if (response.ok) {
+                    setStatus("Email enviado com sucesso!");
+                    setFormData({ nome: "", email: "", mensagem: "" });
+                } else {
+                    setStatus("Erro ao enviar email.");
+                }
+            } catch (fetchError) {
+                console.error("Erro no fallback de envio:", fetchError);
+                setStatus("Erro crítico ao enviar email.");
+            }
+        }
     };
 
     return (
@@ -42,7 +92,11 @@ const Formulario = () => {
             <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2">
                 Entre em Contato
             </h2>
-            <form className="flex flex-col m-5 gap-6 items-center" onSubmit={handleSubmit}>
+            <form 
+                ref={form}
+                className="flex flex-col m-5 gap-6 items-center" 
+                onSubmit={handleSubmit}
+            >
                 <Input
                     Label="Nome:"
                     name="nome"
@@ -57,23 +111,33 @@ const Formulario = () => {
                     value={formData.email}
                     onChange={handleChange}
                 />
-                <div>
-                    <label className="m-0 flex right-0 items-start p-0 text-green-500">
+                <div className="w-full">
+                    <label className="block mb-2 text-green-500">
                         Mensagem:
                     </label>
                     <textarea
-                        name="mensagem" // Nome correspondente ao placeholder
-                        className="bg-zinc-800 rounded-md w-80 h-20"
+                        name="mensagem"
+                        className="bg-zinc-800 rounded-md w-full h-20 text-white p-2"
                         placeholder="Digite sua mensagem"
                         value={formData.mensagem}
                         onChange={handleChange}
                     ></textarea>
                 </div>
-                <button type="submit" className="bg-green-500 hover:bg-green-600 w-36 px-6 py-3 rounded-full transition duration-300 z-20">
+                <button 
+                    type="submit" 
+                    className="bg-green-500 hover:bg-green-600 w-36 px-6 py-3 rounded-full transition duration-300 z-20 text-black font-bold"
+                >
                     Enviar
                 </button>
             </form>
-            {status && <p className="text-green-500 mt-4">{status}</p>}
+            {status && (
+                <p className={`
+                    text-center mt-4 
+                    ${status.includes('sucesso') ? 'text-green-500' : 'text-red-500'}
+                `}>
+                    {status}
+                </p>
+            )}
         </div>
     );
 };
