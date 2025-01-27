@@ -24,7 +24,7 @@ const Modal = ({ isOpen, onClose }) => {
                         ease: "backInOut",
                         delay: 0.2 
                     }} >
-                        <Link to='/' className="hover:text-green-400" onClick={onClose}>Home</Link>
+                        <Link to='/' className="hover:text-green-400" onClick={onClose}>Instagram</Link>
                     </motion.li>
                     <motion.li
                     initial={{ opacity: 0, x: 100 }}
@@ -34,7 +34,7 @@ const Modal = ({ isOpen, onClose }) => {
                         ease: "backInOut",
                         delay: 0.4 
                     }}>
-                        <Link to="/about" className="hover:text-green-400" onClick={onClose}>Sobre</Link>
+                        <Link to="/about" className="hover:text-green-400" onClick={onClose}>Linkedin</Link>
                         </motion.li>
                     <motion.li
                     initial={{ opacity: 0, x: -100 }}

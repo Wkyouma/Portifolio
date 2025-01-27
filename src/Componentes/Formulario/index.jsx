@@ -15,24 +15,21 @@ const Formulario = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Confirme os dados no console
-        console.log("Dados enviados:", formData);
-
         emailjs
             .send(
-                "service_knui4xj", // Substitua pelo seu Service ID
-                "template_6zq9zux", // Substitua pelo seu Template ID
+                "service_knui4xj", //Service ID
+                "template_6zq9zux", //Template ID
                 {
-                    nome: formData.nome,        // Campo "nome" do formulário
-                    email: formData.email,      // Campo "email" do formulário
-                    mensagem: formData.mensagem // Campo "mensagem" do formulário
+                    nome: formData.nome,       
+                    email: formData.email,      
+                    mensagem: formData.mensagem 
                 },
-                "lSHwsmqh4Rb6FRMPB" // Substitua pelo seu Public Key
+                "lSHwsmqh4Rb6FRMPB" //Public Key
             )
             .then(
                 (result) => {
                     setStatus("Email enviado com sucesso!");
-                    setFormData({ nome: "", email: "", mensagem: "" }); // Limpa os campos
+                    setFormData({ nome: "", email: "", mensagem: "" }); 
                 },
                 (error) => {
                     console.error("Erro ao enviar email:", error);
@@ -73,9 +70,9 @@ const Formulario = () => {
                         onChange={handleChange}
                     ></textarea>
                 </div>
-                <Button primeiro={true} segundo={false} direcao={0} delay={0}>
+                <button type="submit" className="bg-green-500 hover:bg-green-600 w-36 px-6 py-3 rounded-full transition duration-300 z-20">
                     Enviar
-                </Button>
+                </button>
             </form>
             {status && <p className="text-green-500 mt-4">{status}</p>}
         </div>

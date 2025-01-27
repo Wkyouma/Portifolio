@@ -18,7 +18,6 @@ import cyber from '/Galeria/Cyber.gif';
 import asImage from '/Galeria/as.gif';
 import Teclar from '/Galeria/teclar.gif';
 
-
 const backgrounds = [
     `url(${retroOld})`,
     `url(${cowboy})`,
@@ -42,25 +41,23 @@ const Home = () => {
         <div className="relative z-0 bg-gradient-to-t from-zinc-900 to-black">
             <Element name='Home'>
                 <div 
-                    className={`h-[100vh] bg-cover bg-center relative transition-colors duration-300`}
+                    className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
                     style={{ 
                         backgroundImage: background,
                         backgroundAttachment: 'fixed',
                     }}
                 >
-                    <div className="h-screen inset-0  bg-black/30 z-50"></div>
+                    <div className="h-screen inset-0 bg-black/30 z-50"></div>
                     <div className="absolute inset-0 m-2 max-h-svh flex justify-center items-center flex-col text-center z-10 border">
                         <Titulo className="text-3xl sm:text-4xl">Igor <span className='text-green-300'>Terplak</span></Titulo>
                         <Subtitulo className="text-lg sm:text-xl md:text-2xl">Desenvolvedor Front-end | Designer Criativo</Subtitulo>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
-                            <Button primeiro={true} segundo={false} direcao={-100} delay={0.5}>
+                            <Button href='#projetos' primeiro={true} segundo={false} direcao={-100} delay={0.5}>
                                 Ver Projetos
                             </Button>
-                            <Button primeiro={false} segundo={true} direcao={100} delay={0.5}>
-                                Ver Projetos
+                            <Button href='https://github.com/Wkyouma' primeiro={false} segundo={true} direcao={100} delay={0.5}>
+                                Github
                             </Button>
-                            
-                           
                         </div>
                         <div className='font-mono absolute top-1/2 right-0 transform translate-y-[-50%]'>
                             <div className='flex flex-col text-3xl sm:text-4xl mr-3 border-t-2 border-b-2'> 
@@ -80,16 +77,14 @@ const Home = () => {
                 <Titulo>Projetos Recentes</Titulo>
                 <div className='m-5'>
                 {ProjetoData.map((Projeto, index) => (
-                        <Card 
-                            key={index} 
-                            title={Projeto.title} 
-                            description={Projeto.description} 
-                            link={Projeto.link} 
-                            image={Projeto.image} 
-                        />
-                    ))}
+                    <Card 
+                        key={index} 
+                        title={Projeto.title} 
+                        description={Projeto.description} 
+                        images={Projeto.images} 
+                    />
+                ))}
                 </div>
-       
             </Section>
 
             <Section id="contato">
@@ -101,8 +96,7 @@ const Home = () => {
                     }}
                 >
                     <div className="flex justify-center items-center h-full">
-                        
-                        <Formulario></Formulario>
+                        <Formulario />
                     </div>
                 </div>
             </Section>

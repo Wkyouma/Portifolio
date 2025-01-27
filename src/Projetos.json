@@ -1,12 +1,40 @@
 [
     {
-        "title": "projeto 1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "image": "./Galeria/anime.gif"
-    },
-    {
-        "title": "projeto 2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "image": "./Galeria/Eva.gif"
-    }
+        "title": "Plak",
+        "description": "Descrição do projeto",
+        "link": "Link do projeto",
+        "images": [
+          "./Galeria/Plak1 (1).png",
+          "./Galeria/Plak1 (2).png"
+        ]
+      },
+      {
+        "title": "Yunli",
+        "description": "Descrição do projeto",
+        "link": "Link do projeto",
+        "images": [
+         "./Galeria/Yunli (1).png",
+          "./Galeria/Yunli (2).png"
+        ]
+      }
+      ,
+      {
+        "title": "CookUp",
+        "description": "Descrição do projeto",
+        "link": "Link do projeto",
+        "images": [
+         "./Galeria/CookUp (1).png",
+          "./Galeria/CookUp (2).png"
+        ]
+      }
+      ,
+      {
+        "title": "RpgMaker",
+        "description": "Descrição do projeto",
+        "link": "Link do projeto",
+        "images": [
+         "./Galeria/RpgMaker (1).png",
+          "./Galeria/RpgMaker (2).png"
+        ]
+      }
 ]
