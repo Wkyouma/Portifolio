@@ -76,7 +76,7 @@ const Home = () => {
 
             <Section id="projetos">
                 <Titulo>Projetos Recentes</Titulo>
-                <div className='m-5'>
+                <div className='grid gap-5 m-5 grid-cols-1 sm:grid-cols-3'>
                 {ProjetoData.map((Projeto, index) => (
                     <Card 
                         key={index} 

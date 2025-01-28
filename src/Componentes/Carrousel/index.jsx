@@ -15,27 +15,28 @@ const Carousel = ({ images }) => {
     }, []);
 
     if (!images || images.length === 0) {
-        return <div>Sem imagens</div>;
+        return <div className="w-full h-60 flex items-center justify-center text-gray-500">Sem imagens</div>;
     }
 
     return (
-        <div className="relative w-72 sm:w-96 overflow-hidden">
-            <img 
-                src={images[currentIndex]} 
-                alt={`Slide ${currentIndex + 1}`}
-                className="w-full h-60 object-cover rounded-lg"
-            />
+        <div className="relative w-full max-w-md mx-auto">
+            <div className="relative overflow-hidden rounded-lg shadow-md">
+                <img 
+                    src={images[currentIndex]} 
+                    alt={`Slide ${currentIndex + 1}`}
+                    className="w-full h-60 md:h-72 object-cover"
+                />
+            </div>
             
             <div className="flex justify-center mt-2 space-x-2">
                 {images.map((_, index) => (
                     <button 
                         key={index}
                         onClick={() => setCurrentIndex(index)}
-                        className={`h-2 w-2 rounded-full ${
-                            index === currentIndex 
-                                ? 'bg-green-500' 
-                                : 'bg-gray-300'
-                        }`}
+                        className={`
+                            h-2 w-2 rounded-full transition-colors
+                            ${index === currentIndex ? 'bg-green-500' : 'bg-gray-300'}
+                        `}
                     />
                 ))}
             </div>
