@@ -4,8 +4,8 @@ import Subtitulo from '../../Componentes/Subtitulo';
 import Section from '../../Componentes/Section';
 import TechIcons from '../../Componentes/TechIcons';
 import Card from '../../Componentes/Section/ProjetoSection';
-import useRandomBackground from '../../Hooks/index'
-import ProjetoData from '../../Projetos.json'
+import useRandomBackground from '../../Hooks/index';
+import ProjetoData from '../../Projetos.json';
 import Formulario from '../../Componentes/Formulario';
 import Button from '../../Componentes/Button';
 import retroOld from '/Galeria/retro-old.gif';
@@ -45,7 +45,8 @@ const Home = () => {
                     className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
                     style={{ 
                         backgroundImage: background,
-                        backgroundAttachment: 'fixed',
+                        backgroundAttachment: 'scroll', // Alterado para 'scroll'
+                        backgroundSize: 'cover', // Adicionado para cobrir a área
                     }}
                 >
                     <div className="h-screen inset-0 bg-black/30 z-50"></div>
@@ -70,10 +71,8 @@ const Home = () => {
                         <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-3xl sm:text-4xl text-white z-10">WELCOME</h1>
                     </div>
                 </div>
-            </Element>
-            
+            </Element>         
             <TechIcons />
-
             <Section id="projetos">
                 <Titulo>Projetos Recentes</Titulo>
                 <div className='grid gap-5 m-5 grid-cols-1 sm:grid-cols-3'>
@@ -88,14 +87,15 @@ const Home = () => {
                 ))}
                 </div>
             </Section>
-            <AboutSection></AboutSection>
-
+            <span className='text-white text-xs sm:text-5xl'>___________________________________________________________</span>
+            <AboutSection />
             <Section id="contato">
                 <div 
                     className={`w-full h-[80vh] sm:h-auto sm:min-h-screen bg-cover bg-center relative transition-colors duration-300 `}
                     style={{ 
                         backgroundImage: secondBackground,
-                        backgroundAttachment: 'fixed',
+                        backgroundAttachment: 'scroll', // Alterado para 'scroll'
+                        backgroundSize: 'cover', // Adicionado para cobrir a área
                     }}
                 >
                     <div className="flex justify-center sm:h-auto sm:min-h-screen items-center border m-2">
