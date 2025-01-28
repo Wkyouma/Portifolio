@@ -45,8 +45,8 @@ const Home = () => {
                     className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
                     style={{ 
                         backgroundImage: background,
-                        backgroundAttachment: 'scroll', // Alterado para 'scroll'
-                        backgroundSize: 'cover', // Adicionado para cobrir a área
+                        backgroundAttachment: 'fixed', // Mantido para desktop
+                        backgroundSize: 'cover',
                     }}
                 >
                     <div className="h-screen inset-0 bg-black/30 z-50"></div>
@@ -94,8 +94,8 @@ const Home = () => {
                     className={`w-full h-[80vh] sm:h-auto sm:min-h-screen bg-cover bg-center relative transition-colors duration-300 `}
                     style={{ 
                         backgroundImage: secondBackground,
-                        backgroundAttachment: 'scroll', // Alterado para 'scroll'
-                        backgroundSize: 'cover', // Adicionado para cobrir a área
+                        backgroundAttachment: 'fixed', // Mantido para desktop
+                        backgroundSize: 'cover',
                     }}
                 >
                     <div className="flex justify-center sm:h-auto sm:min-h-screen items-center border m-2">
