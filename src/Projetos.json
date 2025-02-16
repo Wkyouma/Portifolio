@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Plak",
+        "description": "Site de Animes",
+        "link": "https://plak-animes.vercel.app",
+        "Repositorio":"https://github.com/Wkyouma/Plak-animes",
+        "images": [
+          "./Galeria/Plak1 (1).png",
+          "./Galeria/Plak1 (2).png"
+        ]
+      },
+      {
+        "title": "Yunli",
+        "description": "Site de um artista",
+        "link": "https://yun-li-page.vercel.app",
+        "Repositorio":"https://github.com/Wkyouma/Yun-Li-page",
+        "images": [
+         "./Galeria/Yunli (1).png",
+          "./Galeria/Yunli (2).png"
+        ]
+      }
+      ,
+      {
+        "title": "CookUp",
+        "description": "Site de receitas",
+        "link": "https://cookup-sigma.vercel.app",
+        "Repositorio":"https://github.com/Wkyouma/CookUp",
+        "images": [
+         "./Galeria/CookUp (1).png",
+          "./Galeria/CookUp (2).png"
+        ]
+      }
+      ,
+      {
+        "title": "RpgMaker",
+        "description": "Descrição do projeto",
+        "link": "https://rpgmaker-with-typescript.vercel.app",
+        "Repositorio":"https://github.com/Wkyouma/RPGMAKER-with-typescript",
+        "images": [
+         "./Galeria/RpgMaker (1).png",
+          "./Galeria/RpgMaker (2).png"
+        ]
+      }
+      ,
+      {
+        "title": "Em breve",
+        "description": "...",
+        "link": "",
+        "Repositorio":"",
+        "images": [
+         "",
+          ""
+        ]
+      }
+]
