@@ -19,6 +19,7 @@ import cyber from '/Galeria/Cyber.gif';
 import asImage from '/Galeria/as.gif';
 import Teclar from '/Galeria/teclar.gif';
 
+
 const backgrounds = [
     `url(${retroOld})`,
     `url(${cowboy})`,
@@ -45,7 +46,9 @@ const Home = () => {
                     className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
                     style={{ 
                         backgroundImage: background,
+
                         backgroundAttachment: 'fixed', 
+
                         backgroundSize: 'cover',
                     }}
                 >
@@ -92,13 +95,12 @@ const Home = () => {
                 ))}
                 </div>
             </Section>
-            
             <Section id="contato">
                 <div 
                     className={`w-full h-[80vh] sm:h-auto sm:min-h-screen bg-cover bg-center relative transition-colors duration-300 `}
                     style={{ 
                         backgroundImage: secondBackground,
-                        backgroundAttachment: 'fixed', // Mantido para desktop
+                        backgroundAttachment: 'fixed', 
                         backgroundSize: 'cover',
                     }}
                 >

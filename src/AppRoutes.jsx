@@ -3,6 +3,7 @@ import Home from './Pages/Home/index';
 import './App.css';
 import Cabecalho from './Componentes/Cabecalho';
 
+
 function AppRoutes() {
   return (
     <BrowserRouter>

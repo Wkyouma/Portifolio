@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from "react";
 import { TfiMenu } from "react-icons/tfi";
 import { Link } from "react-scroll";
 import { motion } from 'framer-motion';
+
 import Modal from '../Modal/index'; 
 
 const Cabecalho = () => {
@@ -19,7 +21,6 @@ const Cabecalho = () => {
         { name: 'Projetos', to: 'projetos' },
         { name: 'Contato', to: 'contato' }
     ];
-
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -76,5 +77,4 @@ const Cabecalho = () => {
         </header>
     );
 }
-
 export default Cabecalho;
