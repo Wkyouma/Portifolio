@@ -11,9 +11,6 @@ const AboutSection = () => {
                 animate={{ opacity: 1 }}
                 className="container max-w-7xl mx-auto px-4 py-16 relative"
             >
-                
-                
-                {/* Neon Title */}
                 <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="mb-12"
@@ -28,10 +25,9 @@ const AboutSection = () => {
                 <motion.div 
                     initial={{ y: 50 }}
                     animate={{ y: 0 }}
-                    className="bg-zinc-800/50 rounded-2xl backdrop-blur-lg shadow-[0_0_15px_rgba(34,_197,_94,_0.5)] p-8 md:p-12 border border-green-500/20"
+                    className="bg-zinc-800/50 shadow-2xl shadow-zinc-900 p-8 md:p-12 borde"
                 >
                     <div className="flex flex-col lg:flex-row items-center gap-12">
-                        {/* Profile Image with Retro Effects */}
                         <motion.div 
                             className="lg:w-1/3 flex justify-center"
                             whileHover={{ scale: 1.05 }}
@@ -46,10 +42,7 @@ const AboutSection = () => {
                                 />
                             </div>
                         </motion.div>
-
-                        {/* Content Section */}
                         <div className="lg:w-2/3 space-y-8">
-                            {/* Animated Skill Cards */}
                             <motion.div 
                                 className="grid grid-cols-2 md:grid-cols-3 gap-4"
                                 initial={{ opacity: 0, y: 20 }}
@@ -60,14 +53,12 @@ const AboutSection = () => {
                                     <CardObjetivo Title="Desenvolvimento Web" description="Frontend & Backend" />
                                 </motion.div>
                                 <motion.div whileHover={{ scale: 1.05, rotate: 2 }}>
-                                    <CardObjetivo Title="React Specialist" description="Modern Web Apps" />
+                                    <CardObjetivo Title="teste" description="teste" />
                                 </motion.div>
                                 <motion.div whileHover={{ scale: 1.05, rotate: -2 }}>
-                                    <CardObjetivo Title="Problem Solver" description="Analytical Thinking" />
+                                    <CardObjetivo Title="teste" description="teste" />
                                 </motion.div>
                             </motion.div>
-
-                            {/* Bio Text with Gradient Highlights */}
                             <motion.div 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -97,26 +88,19 @@ const AboutSection = () => {
                                 <br />
                                 Tenho interesse em aprofundar conhecimentos em <span className="text-green-500 font-semibold">SSR (Server-Side Rendering), Next.js</span> e outros frameworks como <span className="text-green-500 font-semibold">Vue</span> e <span className="text-green-500 font-semibold">Angular</span>.
                             </motion.div>
-
-                            {/* Retro Wave CV Button */}
-                            <motion.div 
-                                className="flex justify-center lg:justify-start"
-                                whileHover={{ scale: 1.05 }}
-                            >
+                    
+                             
                                 <a 
                                     href="./CV/Currículo (14).pdf"
                                     download="Curriculo_Igor_Gutierrez.pdf"
-                                    className="group relative inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold overflow-hidden"
+                                    className="group relative inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-400  hover:scale-105 transition-all duration-500"
                                 >
-                                    <span className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                                     <span className="relative flex items-center gap-2">
-                                        <svg className="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                        </svg>
+                                      
                                         Baixar CV
                                     </span>
                                 </a>
-                            </motion.div>
+                         
                         </div>
                     </div>
                 </motion.div>
