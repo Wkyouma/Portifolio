@@ -1,7 +1,7 @@
 import { IoMdClose } from "react-icons/io";
 import { FaInstagram, FaLinkedin, FaCode } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const MenuItem = ({ icon: Icon, text, onClick }) => (
@@ -23,6 +23,17 @@ const MenuItem = ({ icon: Icon, text, onClick }) => (
 const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.body.style.height = 'auto';
+        };
+    }, [isOpen]);
+
     const handleInstagram = () => {
         window.open('https://www.instagram.com/igorgutierrez_/', '_blank');
         onClose();
@@ -34,25 +45,49 @@ const Modal = ({ isOpen, onClose }) => {
     };
 
     const handleServicos = () => {
-        document.getElementById('projetos').scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById('projetos');
+        if (element) {
+            const yOffset = -100; // ajuste conforme necessário
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
         onClose();
     };
 
     const handleContato = () => {
-        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById('contato');
+        if (element) {
+            const yOffset = -100; // ajuste conforme necessário
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
         onClose();
     };
 
     return (
-        <div className="fixed inset-0 bg-black/65 z-50 flex items-center justify-center">
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 w-screen h-screen flex items-center justify-center"
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                zIndex: 9999,
+            }}
+        >
             <button
                 onClick={onClose}
-                className="absolute top-8 right-8 p-3 bg-red-800 hover:bg-red-600 text-white rounded-full"
+                className="absolute top-8 right-8 p-3 bg-red-800 hover:bg-red-600 text-white rounded-full transition-colors"
             >
                 <IoMdClose size={24} />
             </button>
 
-            <nav>
+            <nav className="relative">
                 <div className="flex flex-col gap-6">
                     <MenuItem 
                         icon={FaInstagram} 
@@ -76,7 +111,7 @@ const Modal = ({ isOpen, onClose }) => {
                     />
                 </div>
             </nav>
-        </div>
+        </motion.div>
     );
 };
 

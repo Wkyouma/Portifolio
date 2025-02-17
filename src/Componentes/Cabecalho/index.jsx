@@ -49,7 +49,7 @@ const Cabecalho = () => {
     }, [isModalOpen]);
 
     return (
-        <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'}`}>
+        <header className={`w-full fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'}`}>
             <nav className="flex justify-between items-center p-4">
                 <ul className="cursor-pointer flex space-x-4 m-1 text-white gap-4 ">
                     {navItems.map((item, index) => (
