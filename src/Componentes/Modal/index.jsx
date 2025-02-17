@@ -35,12 +35,12 @@ const Modal = ({ isOpen, onClose }) => {
     }, [isOpen]);
 
     const handleInstagram = () => {
-        window.open('https://www.instagram.com/igorgutierrez_/', '_blank');
+        window.open('https://www.instagram.com/_t3rpl4k_/', '_blank');
         onClose();
     };
 
     const handleLinkedin = () => {
-        window.open('https://www.linkedin.com/in/igor-gutierrez-terplak-3b9a1b1b9/', '_blank');
+        window.open('', '_blank');
         onClose();
     };
 
