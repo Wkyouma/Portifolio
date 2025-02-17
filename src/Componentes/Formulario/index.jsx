@@ -46,9 +46,9 @@ const Formulario = () => {
     };
 
     return (
-        <div className="bg-zinc-900 h-auto w-96 rounded-md flex flex-col justify-center m-5">
-            <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2">Entre em Contato</h2>
-            <form className="flex flex-col m-5 gap-6 items-center" onSubmit={handleSubmit}>
+        <div className="bg-zinc-900 h-auto w-full max-w-md rounded-md flex flex-col justify-center m-5 p-5 shadow-lg">
+            <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2 text-center">Entre em Contato</h2>
+            <form className="flex flex-col gap-6 items-center w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
                 <Input
                     Label="Nome:"
                     name="nome"
@@ -65,11 +65,11 @@ const Formulario = () => {
                     onChange={handleChange}
                     required
                 />
-                <div className="w-full">
-                    <label className="flex ml-3 text-green-500">Mensagem:</label>
+                <div className="w-80">
+                    <label className="flex  w-80 right-0 text-green-500">Mensagem:</label>
                     <textarea
                         name="mensagem"
-                        className="bg-zinc-800 rounded-md w-80 h-20 text-white p-2"
+                        className="bg-zinc-800 rounded-md w-80 h-24 text-white p-2 resize-none"
                         placeholder="Digite sua mensagem"
                         value={formData.mensagem}
                         onChange={handleChange}
@@ -78,11 +78,12 @@ const Formulario = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-green-500 hover:bg-green-600 w-36 px-6 py-3 rounded-full transition duration-300 z-20 text-black font-bold"
+                    className="bg-green-500 hover:bg-green-600 w-40 px-6 py-3 rounded-full transition duration-300 z-20 text-black font-bold"
                 >
                     Enviar
                 </button>
             </form>
+
             {status && (
                 <p className={`text-center mt-4 ${status.includes('sucesso') ? 'text-green-500' : 'text-red-500'}`}>
                     {status}

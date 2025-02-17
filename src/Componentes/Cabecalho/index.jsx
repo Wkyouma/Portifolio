@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { TfiMenu } from "react-icons/tfi";
 import { Link } from "react-scroll";
@@ -20,7 +19,7 @@ const Cabecalho = () => {
         { name: 'Sobre', to: 'Sobre' },
         { name: 'Projetos', to: 'projetos' },
         { name: 'Contato', to: 'contato' }
-    ];
+    ];          
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -36,6 +35,18 @@ const Cabecalho = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
 
     return (
         <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'}`}>
