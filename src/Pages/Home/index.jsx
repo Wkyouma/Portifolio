@@ -32,7 +32,7 @@ const backgrounds = [
 
 const Home = () => {
     const [background, setBackground] = useState(backgrounds[0]);
-    const [isScrolled, setIsScrolled] = useState(false); // Estado para controlar o scroll
+    const [isScrolled, setIsScrolled] = useState(false); 
 
     useEffect(() => {
         const handleScroll = () => {

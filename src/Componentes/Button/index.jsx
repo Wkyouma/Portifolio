@@ -6,9 +6,9 @@ const Button = ({ children, primeiro, segundo, href }) => {
             href={href}
             target="_blank"
             className={clsx(
-                "w-36 px-6 py-3 rounded-full transition duration-300 z-20",
+                "w-36 px-6 py-3 rounded-full transition duration-300 z-20 cursor-pointer",
                 primeiro && "bg-green-500 hover:bg-green-600 text-white",
-                segundo && "bg-transparent text-white border-2 hover:bg-white hover:text-black cursor-pointer"
+                segundo && "bg-transparent text-white border-2 hover:bg-white hover:text-black"
             )}
             disabled={segundo} 
         >
