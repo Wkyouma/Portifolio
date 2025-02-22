@@ -47,7 +47,6 @@ const TechIcons = () => {
                                 transition-all duration-300 ease-in-out
                                 transform hover:scale-110
                                 hover:bg-gray-800
-                                cursor-pointer
                                 shadow-md hover:shadow-xl
                             `}
                         >

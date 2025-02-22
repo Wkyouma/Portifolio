@@ -14,7 +14,7 @@ const AboutSection = () => {
                 <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="mb-12"
-                >
+                    >
                     <Titulo className=" relative">
                         <span className="relative">
                             Sobre mim
@@ -53,10 +53,10 @@ const AboutSection = () => {
                                     <CardObjetivo Title="Desenvolvimento Web" description="Frontend & Backend" />
                                 </motion.div>
                                 <motion.div whileHover={{ scale: 1.05, rotate: 2 }}>
-                                    <CardObjetivo Title="teste" description="teste" />
+                                    <CardObjetivo Title="UI UX" description="Figma" />
                                 </motion.div>
                                 <motion.div whileHover={{ scale: 1.05, rotate: -2 }}>
-                                    <CardObjetivo Title="teste" description="teste" />
+                                    <CardObjetivo Title="..." description="..." />
                                 </motion.div>
                             </motion.div>
                             <motion.div 
@@ -66,41 +66,24 @@ const AboutSection = () => {
                             >
                                 <span className="font-semibold text-white">Sou estudante do 5º semestre de Ciência da Computação na PUCPR</span>, com foco em 
                                 <span className="text-green-500 font-semibold"> desenvolvimento web</span>.
-                                <br />
-                                <br />
                                 Tenho experiência prática com <span className="text-green-500 font-semibold">React</span>, onde desenvolvi aplicações frontend dinâmicas e interativas, utilizando 
                                 <span className="font-semibold text-white"> componentização, estado, hooks</span> e integração com <span className="font-semibold text-white">APIs</span>.
-                                <br />
-                                <br />
+                              <br></br>
                                 Além disso, possuo conhecimento em tecnologias como <span className="font-semibold text-white">Flask, SQLAlchemy, Spark</span> e <span className="font-semibold text-white">FreeRTOS</span>, e linguagens como <span className="font-semibold text-white">Java, Python, C, JavaScript</span> e <span className="font-semibold text-white">TypeScript</span>.
+                     
+                                Em projetos acadêmicos, trabalhei com <span className="text-green-500 font-semibold">sistemas distribuídos</span> (<span className="font-semibold text-white">MapReduce</span> e <span className="font-semibold text-white">Spark</span>) e administração de redes.
                                 <br />
-                                Em projetos acadêmicos, trabalhei com <span className="text-green-500 font-semibold">desenvolvimento de dashboards, sistemas distribuídos</span> (<span className="font-semibold text-white">MapReduce</span> e <span className="font-semibold text-white">Spark</span>) e administração de redes.
-                                <br />
-                                Já atuei como <span className="font-semibold text-white">menor aprendiz</span> na <span className="font-semibold text-white">DBM Contact Center</span>, prestando suporte de TI e atendimento ao cliente, o que me proporcionou habilidades em <span className="font-semibold text-white">resolução de problemas</span> e <span className="font-semibold text-white">comunicação técnica</span>.
-                                <br />
-                                <br />
-                                Atualmente, estou aprimorando minhas habilidades em 
-                                <span className="font-semibold text-green-500">React</span> 
-                                e desenvolvimento frontend, explorando conceitos como 
-                                <span className="font-semibold text-white">melhores práticas de performance, organização de componentes</span>
-                                e <span className="font-semibold text-white">otimização da renderização</span>.
-                                <br />
-                                <br />
-                                Tenho interesse em aprofundar conhecimentos em <span className="text-green-500 font-semibold">SSR (Server-Side Rendering), Next.js</span> e outros frameworks como <span className="text-green-500 font-semibold">Vue</span> e <span className="text-green-500 font-semibold">Angular</span>.
+                                Já atuei como <span className="font-semibold text-white">menor aprendiz</span> na <span className="font-semibold text-white">DBM Contact Center</span>, prestando suporte de TI e atendimento ao cliente, o que me proporcionou habilidades em <span className="font-semibold text-white">resolução de problemas</span> e <span className="font-semibold text-white">comunicação técnica</span>.                
                             </motion.div>
-                    
-                             
                                 <a 
                                     href="./CV/Currículo (14).pdf"
                                     download="Curriculo_Igor_Gutierrez.pdf"
                                     className="group relative inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-400  hover:scale-105 transition-all duration-500"
                                 >
                                     <span className="relative flex items-center gap-2">
-                                      
                                         Baixar CV
                                     </span>
                                 </a>
-                         
                         </div>
                     </div>
                 </motion.div>

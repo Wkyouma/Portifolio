@@ -3,22 +3,7 @@ import { FaInstagram, FaLinkedin, FaCode } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-const MenuItem = ({ icon: Icon, text, onClick }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full"
-    >
-        <button 
-            onClick={onClick}
-            className="w-full group flex items-center justify-center gap-4 p-4 text-4xl font-mono text-white/90 hover:text-green-400 transition-all duration-300"
-        >
-            <Icon className="text-3xl" />
-            <span>{text}</span>
-        </button>
-    </motion.div>
-);
+import MenuItem from "./MenuItem/index";
 
 const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -40,7 +25,7 @@ const Modal = ({ isOpen, onClose }) => {
     };
 
     const handleLinkedin = () => {
-        window.open('', '_blank');
+        window.open('https://www.linkedin.com/in/igor-terplak/', '_blank');
         onClose();
     };
 
@@ -55,12 +40,6 @@ const Modal = ({ isOpen, onClose }) => {
     };
 
     const handleContato = () => {
-        const element = document.getElementById('contato');
-        if (element) {
-            const yOffset = -100; // ajuste conforme necessário
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
         onClose();
     };
 
@@ -80,15 +59,10 @@ const Modal = ({ isOpen, onClose }) => {
                 zIndex: 9999,
             }}
         >
-            <button
-                onClick={onClose}
-                className="absolute top-8 right-8 p-3 bg-red-800 hover:bg-red-600 text-white rounded-full transition-colors"
-            >
-                <IoMdClose size={24} />
-            </button>
+            
 
             <nav className="relative">
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col items-center gap-6">
                     <MenuItem 
                         icon={FaInstagram} 
                         text="Instagram" 
@@ -109,7 +83,15 @@ const Modal = ({ isOpen, onClose }) => {
                         text="Contato" 
                         onClick={handleContato}
                     />
+                    <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    onClick={onClose}
+                    className=" flex justify-center items-center bg-red-800 hover:bg-red-600 text-white w-16 h-16 rounded-full transition-colors">
+                    <IoMdClose size={24} />
+                </motion.button>
                 </div>
+                
             </nav>
         </motion.div>
     );
