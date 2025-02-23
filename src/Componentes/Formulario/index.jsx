@@ -81,7 +81,7 @@ const Formulario = () => {
                             <label className="text-green-500 flex">Mensagem:</label>
                             <textarea
                                 name="mensagem"
-                                className="bg-zinc-800 rounded-md w-full h-48 text-white p-2 resize-none"
+                                className="bg-zinc-800 rounded-md w-full h-48 text-white p-2 resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
                                 placeholder="Digite sua mensagem"
                                 value={formData.mensagem}
                                 onChange={handleChange}

@@ -6,8 +6,8 @@ const CardObjetivo = ({Title, description}) => {
       
         transition
     ">
-        <h3 className="font-bold text-green-400">{Title}</h3>
-        <p className="text-sm text-gray-300">{description}</p>
+        <h3 className="font-bold text-green-400 font-mono">{Title}</h3>
+        <p className="text-sm text-gray-300 font-mono">{description}</p>
     </div>
     )
 }

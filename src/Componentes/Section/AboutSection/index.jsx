@@ -62,7 +62,7 @@ const AboutSection = () => {
                             <motion.div 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                className="prose prose-invert max-w-none text-gray-300 text-sm md:text-base space-y-4 relative"
+                                className="max-w-none font-mono text-gray-300 text-sm md:text-base space-y-4 relative"
                             >
                                 <span className="font-semibold text-white">Sou estudante do 5º semestre de Ciência da Computação na PUCPR</span>, com foco em 
                                 <span className="text-green-500 font-semibold"> desenvolvimento web</span>.
