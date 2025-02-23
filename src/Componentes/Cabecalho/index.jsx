@@ -81,7 +81,7 @@ const Cabecalho = () => {
                         </motion.li>
                     ))}
                 </ul>
-                <TfiMenu size={30} className="cursor-pointer" onClick={toggleModal} />
+                <TfiMenu size={40} className="cursor-pointer mr-4" onClick={toggleModal} />
             </nav>
 
             <Modal isOpen={isModalOpen} onClose={toggleModal} />
