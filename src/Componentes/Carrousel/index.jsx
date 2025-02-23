@@ -19,7 +19,7 @@ const Carousel = ({ images }) => {
     }
 
     return (
-        <div className="relative w-full max-w-md mx-auto">
+        <div className="relative w-full max-w-md mx-auto mr-10">
             <div className="relative overflow-hidden rounded-lg shadow-md">
                 <img 
                     src={images[currentIndex]} 

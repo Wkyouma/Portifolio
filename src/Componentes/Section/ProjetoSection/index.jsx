@@ -8,9 +8,9 @@ const Card = ({ title, description, images, Link, Repositorio }) => {
 
     return (
         <div className="
-            flex flex-col lg:flex-row bg-zinc-800/50 overflow-hidden shadow-lg mb-4
-            transition-all duration-300 hover:scale-100 w-full lg:w-[calc(90%+1rem)] gap-4">
-            <div className="w-full lg:w-64 p-4 flex flex-col justify-center bg-zinc-900/60"> 
+            flex flex-col lg:flex-row bg-zinc-900/60 overflow-hidden shadow-lg mb-4
+            transition-all duration-300 hover:scale-105 w-full lg:w-[calc(89%+1rem)] gap-4 rounded-lg">
+            <div className="w-full lg:w-64 p-4 flex flex-col justify-center bg-zinc-800/60 rounded-lg"> 
                 <h2 className="text-xl sm:text-2xl font-bold mb-4 text-green-500">
                     {title}
                 </h2>
@@ -38,25 +38,24 @@ const Card = ({ title, description, images, Link, Repositorio }) => {
                     </Button>
                 </div>
             </div>
-            <div className="relative w-full lg:w-1/2 flex p-4">
+            <div className="relative w-full lg:w-1/2 flex p-2">
                 <Carousel images={images} />
 
                 <motion.div
-                    className="absolute top-0 right-0 bg-zinc-900 text-center shadow-lg overflow-hidden z-50"
-                    initial={{ width: 30 }}
-                    animate={{ width: isExpanded ? '105%' : 30 }}
+                    className="absolute m-0 top-0 right-0 bg-zinc-900 text-center shadow-lg overflow-hidden z-50 rounded-lg"
+                    animate={{ width: isExpanded ? '105%' : '15%' }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     style={{ height: '100%', transformOrigin: "right center" }}
                 >
                     <div className="flex items-center justify-center h-full w-full relative">
                         <a
-                            className="absolute top-2 right-2 text-white cursor-pointer text-lg"
+                            className="absolute top-2 right-2 text-white cursor-pointer text-lg hover:text-green-400 duration-150"
                             onClick={() => setIsExpanded(!isExpanded)}
                         >
-                            {isExpanded ? "x" : "<"}
+                            {isExpanded ? "✖️" : "➤"}
                         </a>
 
-                        <div className={`transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-100 hidden'} w-full p-4`}>
+                        <div className={`transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 hidden'} w-full p-4`}>
                             <h1 className="text-white text-xl font-bold mb-2">Descrição</h1>
                             <p className="text-gray-300">{description}</p>
                         </div>
@@ -64,7 +63,7 @@ const Card = ({ title, description, images, Link, Repositorio }) => {
                 </motion.div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Card;

@@ -122,7 +122,7 @@ const Home = () => {
                                 <span>2</span>
                             </div>
                         </div>
-                        <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-3xl sm:text-4xl text-white z-10 hidden sm:block">WELCOME</h1>
+                        <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-3xl sm:text-4xl text-white z-10 hidden sm:block hover:text-green-400  duration-150">WELCOME</h1>
                     </div>
                 </div>
             </Element>         
@@ -133,14 +133,14 @@ const Home = () => {
             </Element>
             <Section id="projetos">
                 <Titulo>Projetos Recentes</Titulo>
-                <div className='grid gap-5 m-5 grid-cols-1 sm:grid-cols-3'>
+                <div className='grid gap-5 m-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
                     {ProjetoData.map((Projeto, index) => (
                         <Card 
                             key={index} 
                             title={Projeto.title} 
                             description={Projeto.description} 
-                            Link={Projeto.link}
-                            Repositorio={Projeto.Repositorio}
+                            link={Projeto.link} 
+                            repositorio={Projeto.repositorio} 
                             images={Projeto.images} 
                         />
                     ))}
