@@ -46,7 +46,7 @@ const Formulario = () => {
     };
 
     return (
-        <div className="absolute inset-0 flex justify-center items-center z-10">
+        <div className="absolute inset-0 flex justify-center items-center ">
             <div className="bg-zinc-900 h-auto w-full max-w-7xl p-4 sm:p-10 shadow-lg">
                 <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2 text-center">Entre em Contato</h2>
                 <form onSubmit={handleSubmit}>

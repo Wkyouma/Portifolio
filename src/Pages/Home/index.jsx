@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Element, Link } from 'react-scroll'; // Importando Link do react-scroll
+import { Element, Link } from 'react-scroll';
 import { MdKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { motion } from 'framer-motion'; // Importando motion do Framer Motion
+import { motion } from 'framer-motion'; 
 import Titulo from '../../Componentes/Titulo';
 import Subtitulo from '../../Componentes/Subtitulo';
 import Section from '../../Componentes/Section';
@@ -21,13 +21,13 @@ import cyber from '/Galeria/Cyber.gif';
 import Squares from '../../Componentes/Formulario/Squares/Squares';
 
 const backgrounds = [
-   {name :"Screen-01", url: `url(${ashita})`},
-   {name :"Screen-02", url:`url(${lain})`},
-   {name :"Screen-03", url:`url(${cyber})`},
-   {name :"Screen-04", url:`url(${anime})`},
-   {name :"Screen-05", url:`url(${retro})`},
-   {name :"Screen-06", url:`url(${cowboy})`},
-   {name :"Screen-07", url:`url(${retroOld})`},
+   {name :"Screen-00", url: `url(${ashita})`},
+   {name :"Screen-01", url:`url(${lain})`},
+   {name :"Screen-02", url:`url(${cyber})`},
+   {name :"Screen-03", url:`url(${anime})`},
+   {name :"Screen-04", url:`url(${retro})`},
+   {name :"Screen-05", url:`url(${cowboy})`},
+   {name :"Screen-06", url:`url(${retroOld})`},
 ];
 
 const Home = () => {
@@ -119,7 +119,7 @@ const Home = () => {
                             <div className='flex flex-col text-3xl sm:text-4xl mr-3 border-t-2 border-b-2'> 
                                 <span>0</span>
                                 <span>0</span>
-                                <span>2</span>
+                                <span>{backgrounds.indexOf(background)}</span>
                             </div>
                         </div>
                         <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-3xl sm:text-4xl text-white z-10 hidden sm:block hover:text-green-400  duration-150">WELCOME</h1>
