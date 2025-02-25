@@ -41,26 +41,6 @@ const Card = ({ title, description, images, Link, Repositorio }) => {
             <div className="relative w-full lg:w-1/2 flex p-2">
                 <Carousel images={images} />
 
-                <motion.div
-                    className="absolute m-0 top-0 right-0 bg-zinc-900 text-center shadow-lg overflow-hidden z-50 rounded-lg"
-                    animate={{ width: isExpanded ? '105%' : '15%' }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    style={{ height: '100%', transformOrigin: "right center" }}
-                >
-                    <div className="flex items-center justify-center h-full w-full relative">
-                        <a
-                            className="absolute top-2 right-2 text-white cursor-pointer text-lg hover:text-green-400 duration-150"
-                            onClick={() => setIsExpanded(!isExpanded)}
-                        >
-                            {isExpanded ? "✖️" : "➤"}
-                        </a>
-
-                        <div className={`transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 hidden'} w-full p-4`}>
-                            <h1 className="text-white text-xl font-bold mb-2">Descrição</h1>
-                            <p className="text-gray-300">{description}</p>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
         </div>
     );

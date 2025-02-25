@@ -139,8 +139,8 @@ const Home = () => {
                             key={index} 
                             title={Projeto.title} 
                             description={Projeto.description} 
-                            link={Projeto.link} 
-                            repositorio={Projeto.repositorio} 
+                            Link={Projeto.link} 
+                            Repositorio={Projeto.Repositorio} 
                             images={Projeto.images} 
                         />
                     ))}
