@@ -19,6 +19,7 @@ import anime from '/Galeria/city5.gif';
 import lain from '/Galeria/lain.gif';
 import cyber from '/Galeria/Cyber.gif';
 import Squares from '../../Componentes/Formulario/Squares/Squares';
+import ProjectSlider from '../../Componentes/Section/Projetos';
 
 const backgrounds = [
    {name :"Screen-00", url: `url(${ashita})`},
@@ -133,18 +134,7 @@ const Home = () => {
             </Element>
             <Section id="projetos">
                 <Titulo>Projetos Recentes</Titulo>
-                <div className='grid gap-5 m-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
-                    {ProjetoData.map((Projeto, index) => (
-                        <Card 
-                            key={index} 
-                            title={Projeto.title} 
-                            description={Projeto.description} 
-                            Link={Projeto.link} 
-                            Repositorio={Projeto.Repositorio} 
-                            images={Projeto.images} 
-                        />
-                    ))}
-                </div>
+                <ProjectSlider></ProjectSlider>
             </Section>
             <Section id="contato">
                 <div className="relative w-full h-screen">
