@@ -4,7 +4,7 @@ import projects from "../../../Projetos.json";
 
 const ProjectSlider = () => {
   const [currentProject, setCurrentProject] = useState(0);
-  const [direction, setDirection] = useState(1); 
+  const [direction, setDirection] = useState(1);
 
   const nextProject = () => {
     setDirection(1);
@@ -17,29 +17,56 @@ const ProjectSlider = () => {
   };
 
   return (
-    <div className="w-screen h-screen relative p-20 flex flex-col items-center justify-center">
+    <div className="w-full h-full relative flex flex-col items-center justify-center p-8">
       <div className="absolute inset-y-1/2 transform -translate-y-1/2 left-0 right-0 flex items-center justify-between px-4">
-        <button onClick={prevProject} className="text-white p-2 text-2xl">❮</button>
-        <button onClick={nextProject} className="text-white p-2 text-2xl">❯</button>
+        <button
+          onClick={prevProject}
+          className="text-white p-4 text-3xl ml-5 rounded-full transition-all"
+        >
+          ❮
+        </button>
+        <button
+          onClick={nextProject}
+          className="text-white p-4 text-3xl mr-5 rounded-full transition-all"
+        >
+          ❯
+        </button>
       </div>
-      <div className="h-full flex items-center justify-center overflow-hidden w-full">
+
+      <div className="bg-neutral-800 h-[500px] flex items-center justify-center p-12 w-full rounded-3xl shadow-lg">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
-            key={currentProject} 
-            initial={{ opacity: 0, x: direction * 100 }} 
+            key={currentProject}
+            initial={{ opacity: 0, x: direction === 1 ? 100 : -100 }} 
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: direction * -100 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            exit={{ opacity: 0, x: direction === 1 ? -100 : 100 }} 
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="flex items-center w-full justify-center gap-8"
           >
             <img
-              className="w-2/4 rounded-md hover:scale-105 transition-all duration-300"
+              className="w-2/4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               src={projects[currentProject].images[0]}
               alt="Projeto"
             />
-            <div className="flex flex-col justify-center items-center w-2/4 text-center">
-              <h2 className="text-xl font-semibold">{projects[currentProject].title}</h2>
-              <p>{projects[currentProject].description}</p>
+            <div className="flex flex-col justify-center items-center w-2/4 text-center space-y-4">
+              <h2 className="text-3xl font-semibold text-white">{projects[currentProject].title}</h2>
+              <p className="text-lg text-gray-300">{projects[currentProject].description}</p>
+              <a
+                href={projects[currentProject].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 px-6 py-2 text-lg font-semibold bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all"
+              >
+                Acessar Projeto
+              </a>
+              <a
+                href={projects[currentProject].Repositorio}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 px-6 py-2 text-lg font-semibold bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-all"
+              >
+                Ver Repositório
+              </a>
             </div>
           </motion.div>
         </AnimatePresence>

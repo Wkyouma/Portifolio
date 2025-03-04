@@ -1,55 +1,52 @@
 [
-    {
-        "title": "Plak",
-        "description": "Site de Animes",
-        "link": "https://plak-animes.vercel.app",
-        "Repositorio":"https://github.com/Wkyouma/Plak-animes",
-        "images": [
-          "./Galeria/Plak1 (1).png",
-          "./Galeria/Plak1 (2).png"
-        ]
-      },
-      {
-        "title": "Yunli",
-        "description": "Site de um artista",
-        "link": "https://yun-li-page.vercel.app",
-        "Repositorio":"https://github.com/Wkyouma/Yun-Li-page",
-        "images": [
-         "./Galeria/Yunli (1).png",
-          "./Galeria/Yunli (2).png"
-        ]
-      }
-      ,
-      {
-        "title": "CookUp",
-        "description": "Site de receitas",
-        "link": "https://cookup-sigma.vercel.app",
-        "Repositorio":"https://github.com/Wkyouma/CookUp",
-        "images": [
-         "./Galeria/CookUp (1).png",
-          "./Galeria/CookUp (2).png"
-        ]
-      }
-      ,
-      {
-        "title": "RpgMaker",
-        "description": "Descrição do projeto",
-        "link": "https://rpgmaker-with-typescript.vercel.app",
-        "Repositorio":"https://github.com/Wkyouma/RPGMAKER-with-typescript",
-        "images": [
-         "./Galeria/RpgMaker (1).png",
-          "./Galeria/RpgMaker (2).png"
-        ]
-      }
-      ,
-      {
-        "title": "Em breve",
-        "description": "...",
-        "link": "",
-        "Repositorio":"",
-        "images": [
-         "",
-          ""
-        ]
-      }
+  {
+    "title": "Plak",
+    "description": "Plak é um site dedicado ao universo dos animes, onde você pode explorar uma vasta coleção de séries e filmes. O design é clean e intuitivo, proporcionando uma navegação fluida entre os conteúdos. Com informações detalhadas sobre cada anime, o site oferece uma experiência imersiva para os fãs da cultura japonesa.",
+    "link": "https://plak-animes.vercel.app",
+    "Repositorio": "https://github.com/Wkyouma/Plak-animes",
+    "images": [
+      "./Galeria/Plak1 (1).png",
+      "./Galeria/Plak1 (2).png"
+    ]
+  },
+  {
+    "title": "Yunli",
+    "description": "Yunli é um site criado para promover o trabalho de um artista. Com um design minimalista, o site destaca suas obras e permite que os visitantes conheçam mais sobre o estilo artístico e o portfólio do criador. É uma vitrine digital para quem aprecia arte moderna e design gráfico.",
+    "link": "https://yun-li-page.vercel.app",
+    "Repositorio": "https://github.com/Wkyouma/Yun-Li-page",
+    "images": [
+      "./Galeria/Yunli (1).png",
+      "./Galeria/Yunli (2).png"
+    ]
+  },
+  {
+    "title": "CookUp",
+    "description": "CookUp é um site de receitas culinárias que oferece uma grande variedade de pratos, desde os mais simples até os mais elaborados. Ideal para quem deseja experimentar novas receitas ou aprimorar habilidades na cozinha, o site fornece instruções detalhadas e imagens para facilitar o preparo de cada prato.",
+    "link": "https://cookup-sigma.vercel.app",
+    "Repositorio": "https://github.com/Wkyouma/CookUp",
+    "images": [
+      "./Galeria/CookUp (1).png",
+      "./Galeria/CookUp (2).png"
+    ]
+  },
+  {
+    "title": "RpgMaker",
+    "description": "RpgMaker é uma plataforma online para criação de jogos no estilo RPG, utilizando TypeScript para desenvolvimento. O site oferece ferramentas fáceis de usar para quem deseja criar histórias interativas, cenários imersivos e personagens únicos. É uma ótima opção para aspirantes a desenvolvedores de jogos que querem criar suas próprias aventuras.",
+    "link": "https://rpgmaker-with-typescript.vercel.app",
+    "Repositorio": "https://github.com/Wkyouma/RPGMAKER-with-typescript",
+    "images": [
+      "./Galeria/RpgMaker (1).png",
+      "./Galeria/RpgMaker (2).png"
+    ]
+  },
+  {
+    "title": "Em breve",
+    "description": "Este projeto está em desenvolvimento e em breve será lançado. Fique atento para novidades sobre este projeto emocionante!",
+    "link": "",
+    "Repositorio": "",
+    "images": [
+      "",
+      ""
+    ]
+  }
 ]

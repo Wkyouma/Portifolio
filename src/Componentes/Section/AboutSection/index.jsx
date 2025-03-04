@@ -85,7 +85,7 @@ const AboutSection = () => {
                                     <a 
                                         href="./CV/Currículo (14).pdf"
                                         download="Curriculo_Igor_Gutierrez.pdf"
-                                        className="group relative inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-400 hover:scale-105 transition-all duration-500"
+                                        className="group relative inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-600 hover:scale-105 transition-all duration-500"
                                     >
                                         <span className="relative flex items-center gap-2">
                                             Baixar CV
@@ -105,7 +105,7 @@ const AboutSection = () => {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     onClick={toggleContent}
-                    className="mt-4 inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-400 transition-all duration-500"
+                    className="mt-4 inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-600 transition-all duration-500"
                 >
                     <span className="relative flex items-center gap-2">
                         {profissional ? "Mostrar conteúdo pessoal" : "Mostrar conteúdo profissional"}
