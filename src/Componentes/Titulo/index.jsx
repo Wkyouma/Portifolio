@@ -18,7 +18,7 @@ const Titulo = ({ children }) => {
                 textShadow: "0 4px 6px rgba(0,0,0,0.1)",
                 transition: { duration: 0.1 },
             }}
-            className="text-6xl text-white font-mono z-10 cursor-pointer"
+            className="text-6xl text-white font-mono z-10 cursor-default"
         >
             {children}
         </motion.h1>

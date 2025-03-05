@@ -30,12 +30,6 @@ const Modal = ({ isOpen, onClose }) => {
     };
 
     const handleServicos = () => {
-        const element = document.getElementById('projetos');
-        if (element) {
-            const yOffset = -100; 
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
         onClose();
     };
 

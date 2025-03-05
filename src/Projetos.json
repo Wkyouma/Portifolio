@@ -38,6 +38,15 @@
       "./Galeria/RpgMaker (1).png",
       "./Galeria/RpgMaker (2).png"
     ]
+  },
+  {
+    "title": "Em breve",
+    "description": "Este projeto está em desenvolvimento e em breve será lançado. Fique atento para novidades sobre este projeto emocionante!",
+    "link": "",
+    "Repositorio": "",
+    "images": [
+      "",
+      ""
+    ]
   }
- 
 ]

@@ -44,7 +44,7 @@ const ProjectSlider = () => {
             className="flex items-center w-full justify-center gap-8"
           >
             <img
-              className="w-2/4 rounded-xl shadow-lg transform border border-green-500 hover:shadow-green-500/50 duration-300"
+              className="w-2/4 rounded-xl min-h-96 shadow-lg transform border border-green-500 hover:shadow-green-500/50 duration-300"
               src={projects[currentProject].images[0]}
               alt="Projeto"
             />
