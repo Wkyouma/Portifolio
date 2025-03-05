@@ -93,8 +93,8 @@ const AboutSection = () => {
                                     </a>
                                 </>
                             ) : (
-                                <div className="flex flex-col">
-                                    <span className="font-semibold text-white">Sobre meu lado pessoal...</span>
+                                <div className="flex font-mono flex-col">
+                                    <span className="font-semibold  text-white">Sobre meu lado pessoal...</span>
                                     <p>Eu sou apaixonado por aprender novas tecnologias e explorar diferentes formas de resolver problemas...</p>
                                 </div>
                             )}

@@ -21,19 +21,19 @@ const ProjectSlider = () => {
       <div className="absolute inset-y-1/2 transform -translate-y-1/2 left-0 right-0 flex items-center justify-between px-4">
         <button
           onClick={prevProject}
-          className="text-white p-4 text-3xl ml-5 rounded-full transition-all"
+          className="text-white p-4 text-3xl ml-5 rounded-full transition-all hover:text-green-500"
         >
           ❮
         </button>
         <button
           onClick={nextProject}
-          className="text-white p-4 text-3xl mr-5 rounded-full transition-all"
+          className="text-white p-4 text-3xl mr-5 rounded-full transition-all hover:text-green-500"
         >
           ❯
         </button>
       </div>
 
-      <div className="bg-neutral-800 h-[500px] flex items-center justify-center p-12 w-full rounded-3xl shadow-lg">
+      <div className="bg-zinc-800/50 h-[500px] flex items-center justify-center p-12 w-full shadow-lg shadow-zinc-900">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentProject}
@@ -44,12 +44,12 @@ const ProjectSlider = () => {
             className="flex items-center w-full justify-center gap-8"
           >
             <img
-              className="w-2/4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="w-2/4 rounded-xl shadow-lg transform border border-green-500 hover:shadow-green-500/50 duration-300"
               src={projects[currentProject].images[0]}
               alt="Projeto"
             />
             <div className="flex flex-col justify-center items-center w-2/4 text-center space-y-4">
-              <h2 className="text-3xl font-semibold text-white">{projects[currentProject].title}</h2>
+              <h2 className="text-3xl font-semibold text-green-500">{projects[currentProject].title}</h2>
               <p className="text-lg text-gray-300">{projects[currentProject].description}</p>
               <a
                 href={projects[currentProject].link}
