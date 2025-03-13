@@ -1,8 +1,9 @@
-import Titulo from "../../Titulo"
-import CardObjetivo from "./CardObjetivo"
-import Section from "../../Section/index"
+import Titulo from "../../Titulo";
+import CardObjetivo from "./CardObjetivo";
+import Section from "../../Section/index";
 import { motion } from 'framer-motion';
 import { useState } from "react";
+import { FaInstagram, FaLinkedin, FaSteam, FaFilm } from 'react-icons/fa';
 
 const AboutSection = () => {
     const [profissional, setProfissional] = useState(true);
@@ -21,17 +22,15 @@ const AboutSection = () => {
                     whileHover={{ scale: 1.05 }}
                     className="mb-12"
                 >
-                    <Titulo className=" relative">
-                        <span className="relative">
-                            Sobre mim
-                        </span>
+                    <Titulo className="relative text-center">
+                        <span className="relative text-2xl font-semibold text-white">Sobre mim</span>
                     </Titulo>
                 </motion.div>
 
                 <motion.div 
                     initial={{ y: 50 }}
                     animate={{ y: 0 }}
-                    className="bg-zinc-800/50 shadow-2xl shadow-zinc-900 min-h-2.5 p-8 md:p-12 "
+                    className="bg-zinc-800/70 shadow-lg shadow-zinc-900 rounded-2xl p-8 md:p-12"
                 >
                     <div className="flex flex-col lg:flex-row items-center gap-12">
                         <motion.div 
@@ -49,10 +48,10 @@ const AboutSection = () => {
                             </div>
                         </motion.div>
 
-                        <div className="lg:w-2/3 space-y-8">
+                        <div className="lg:w-2/3 space-y-8 text-center lg:text-left">
                             {profissional ? (
                                 <>
-                                    <motion.div 
+                                  <motion.div 
                                         className="grid grid-cols-2 md:grid-cols-3 gap-4"
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -65,23 +64,27 @@ const AboutSection = () => {
                                             <CardObjetivo Title="UI UX" description="Figma" />
                                         </motion.div>
                                         <motion.div whileHover={{ scale: 1.05, rotate: -2 }}>
-                                            <CardObjetivo Title="..." description="..." />
+                                            <CardObjetivo Title="Banco de Dados" description="MySQL" />
                                         </motion.div>
                                     </motion.div>
+
                                     <motion.div 
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        className="max-w-none font-mono text-gray-300 text-sm md:text-base space-y-4 relative"
+                                        className="font-mono text-gray-300 text-sm md:text-base space-y-4 relative"
                                     >
-                                        <span className="font-semibold text-white">Sou estudante do 5º semestre de Ciência da Computação na PUCPR</span>, com foco em 
-                                        <span className="text-green-500 font-semibold"> desenvolvimento web</span>.
-                                        <br></br>
-                                        Além disso, possuo conhecimento em tecnologias como <span className="font-semibold text-white">Flask, SQLAlchemy, Spark</span>...
-                                        <br />
-                                        Em projetos acadêmicos, trabalhei com <span className="text-green-500 font-semibold">sistemas distribuídos</span> (<span className="font-semibold text-white">MapReduce</span> e <span className="font-semibold text-white">Spark</span>) e administração de redes.
-                                        <br />
-                                        Já atuei como <span className="font-semibold text-white">menor aprendiz</span> na <span className="font-semibold text-white">DBM Contact Center</span>, prestando suporte de TI e atendimento ao cliente, o que me proporcionou habilidades em <span className="font-semibold text-white">resolução de problemas</span> e <span className="font-semibold text-white">comunicação técnica</span>.                
+                                        <p>
+                                            Sou estudante do 5º semestre de Ciência da Computação na PUCPR, com foco em 
+                                            <span className="text-green-500 font-semibold"> desenvolvimento web</span>.
+                                            <br />
+                                            Possuo conhecimento em tecnologias como <span className="font-semibold text-white">Flask, SQLAlchemy, Spark</span>...
+                                            <br />
+                                            Em projetos acadêmicos, trabalhei com <span className="text-green-500 font-semibold">sistemas distribuídos</span> (<span className="font-semibold text-white">MapReduce</span> e <span className="font-semibold text-white">Spark</span>) e administração de redes.
+                                            <br />
+                                            Já atuei como <span className="font-semibold text-white">menor aprendiz</span> na <span className="font-semibold text-white">DBM Contact Center</span>, prestando suporte de TI e atendimento ao cliente.
+                                        </p>
                                     </motion.div>
+
                                     <a 
                                         href="./CV/Currículo (14).pdf"
                                         download="Curriculo_Igor_Gutierrez.pdf"
@@ -93,9 +96,27 @@ const AboutSection = () => {
                                     </a>
                                 </>
                             ) : (
-                                <div className="flex font-mono flex-col">
-                                    <span className="font-semibold  text-white">Sobre meu lado pessoal...</span>
-                                    <p>Eu sou apaixonado por aprender novas tecnologias e explorar diferentes formas de resolver problemas...</p>
+                                <div className="flex flex-col text-center lg:text-left">
+                                    <span className="font-semibold text-white">Sobre meu lado pessoal...</span>
+                                    <p className="text-lg text-gray-300">
+                                        No meu tempo livre, gosto de desenhar, tocar violão, guitarra e violino, além de assistir a filmes.  
+                                        Apesar de meu foco ser tecnologia, também valorizo momentos desconectados, onde posso relaxar e aproveitar outras áreas da vida.  
+                                        Gosto de aprender novas habilidades quando necessário, sempre buscando melhorar e evoluir, tanto no lado profissional quanto pessoal.
+                                    </p>
+                                    <div className="flex justify-center lg:justify-start space-x-4 mt-4">
+                                        <a href="https://letterboxd.com" target="_blank" rel="noopener noreferrer">
+                                            <FaFilm className="text-white text-2xl hover:text-green-500 transition-all duration-300" />
+                                        </a>
+                                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                            <FaInstagram className="text-white text-2xl hover:text-green-500 transition-all duration-300" />
+                                        </a>
+                                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                                            <FaLinkedin className="text-white text-2xl hover:text-green-500 transition-all duration-300" />
+                                        </a>
+                                        <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer">
+                                            <FaSteam className="text-white text-2xl hover:text-green-500 transition-all duration-300" />
+                                        </a>
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -105,7 +126,7 @@ const AboutSection = () => {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     onClick={toggleContent}
-                    className="mt-4 inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-600 transition-all duration-500"
+                    className="mt-6 inline-flex items-center px-8 py-4 rounded-full bg-green-500 text-white font-bold overflow-hidden hover:bg-green-600 transition-all duration-500"
                 >
                     <span className="relative flex items-center gap-2">
                         {profissional ? "Mostrar conteúdo pessoal" : "Mostrar conteúdo profissional"}

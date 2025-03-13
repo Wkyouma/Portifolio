@@ -6,9 +6,6 @@ import Titulo from '../../Componentes/Titulo';
 import Subtitulo from '../../Componentes/Subtitulo';
 import Section from '../../Componentes/Section';
 import TechIcons from '../../Componentes/TechIcons';
-import Card from '../../Componentes/Section/ProjetoSection';
-import ProjetoData from '../../Projetos.json';
-import Formulario from '../../Componentes/Formulario';
 import AboutSection from '../../Componentes/Section/AboutSection';
 import Button from '../../Componentes/Button';
 import retroOld from '/Galeria/city3.gif';
@@ -18,8 +15,9 @@ import ashita from '/Galeria/Ashita.gif';
 import anime from '/Galeria/city5.gif';
 import lain from '/Galeria/lain.gif';
 import cyber from '/Galeria/Cyber.gif';
-import Squares from '../../Componentes/Formulario/Squares/Squares';
+import Squares from '../../Componentes/FormSection/Squares/Squares';
 import ProjectSlider from '../../Componentes/Section/Projetos';
+import FormSection from '../../Componentes/FormSection';
 
 const backgrounds = [
    {name :"Screen-00", url: `url(${ashita})`},
@@ -137,15 +135,7 @@ const Home = () => {
                 <ProjectSlider></ProjectSlider>
             </Section>
             <Section id="contato">
-                <div className="relative w-full h-screen">
-                    <Squares
-                        speed={0.5}
-                        squareSize={40}
-                        borderColor="#586359"
-                        hoverFillColor="#222"
-                    />
-                    <Formulario />               
-                </div>
+               <FormSection></FormSection>
             </Section>
         </motion.div>
     );

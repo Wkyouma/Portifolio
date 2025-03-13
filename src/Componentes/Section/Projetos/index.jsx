@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../../Projetos.json";
+import Tag from './Tag/index'
 
 const ProjectSlider = () => {
   const [currentProject, setCurrentProject] = useState(0);
@@ -44,11 +45,13 @@ const ProjectSlider = () => {
             className="flex items-center w-full justify-center gap-8"
           >
             <img
-              className="w-2/4 rounded-xl min-h-96 shadow-lg transform border border-green-500 hover:shadow-green-500/50 duration-300"
+              className="w-2/4 rounded-xl min-h-96 border border-green-500
+              hover:shadow-[0_15px_40px_rgba(34,197,94,0.2)] transition-all duration-300"
               src={projects[currentProject].images[0]}
               alt="Projeto"
             />
-            <div className="flex flex-col justify-center items-center w-2/4 text-center space-y-4">
+            
+            <div className="flex flex-col items-center w-2/4 space-y-4">
               <h2 className="text-3xl font-semibold text-green-500">{projects[currentProject].title}</h2>
               <p className="text-lg text-gray-300">{projects[currentProject].description}</p>
               <a
@@ -67,8 +70,11 @@ const ProjectSlider = () => {
               >
                 Ver Repositório
               </a>
+              <div className=" flex w-full">
+                <Tag projeto={projects[currentProject]}></Tag>
+              </div>
             </div>
-          </motion.div>
+          </motion.div> 
         </AnimatePresence>
       </div>
     </div>

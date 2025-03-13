@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Input from "../Input";
+import Input from "../../Input";
 
 const Formulario = () => {
     const [formData, setFormData] = useState({ nome: "", email: "", assunto:"", mensagem: "" });
