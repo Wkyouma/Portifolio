@@ -47,7 +47,7 @@ const Formulario = () => {
 
     return (
         <div className="absolute inset-0 flex justify-center items-center ">
-            <div className="bg-zinc-900 h-auto w-full max-w-7xl p-4 sm:p-10 shadow-lg">
+            <div className="bg-zinc-900 h-auto w-full max-w-7xl p-4 sm:p-10 shadow-lg border-t-2 border-green-400">
                 <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2 text-center">Entre em Contato</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="flex flex-col sm:flex-row items-center mb-10 gap-4">
@@ -89,7 +89,7 @@ const Formulario = () => {
                             />
                             <button
                                 type="submit"
-                                className="bg-green-500 hover:bg-green-600 w-full sm:w-40 px-6 py-3 rounded-md transition duration-300 z-20 text-black font-bold mt-4"
+                                className="bg-green-500 hover:bg-green-600 w-full sm:w-40 px-6 py-3 rounded-md transition duration-300 z-20 text-white font-bold mt-4"
                             >
                                 Enviar
                             </button>

@@ -1,17 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home/index';
+import Home from './Pages/Home';
 import './App.css';
-import "../index.css"
 import Cabecalho from './Componentes/Cabecalho';
+
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Cabecalho />  
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<h1>Page Not Found</h1>} /> 
-      </Routes> 
+      <div className="relative min-h-screen bg-black">
+     
+        <Cabecalho />  
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} /> 
+        </Routes>
+      </div>
     </BrowserRouter> 
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaReact, FaJs, FaPython, FaNodeJs } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
-import Subtitulo from '../Subtitulo';
+import Subtitulo from '../Titulo/Subtitulo';
 
 const TechIcons = () => {
     const technologies = [
@@ -41,12 +41,12 @@ const TechIcons = () => {
                         <div 
                             key={tech.name} 
                             className={`
-                                flex-col text-green-500
-                                relative group w-20 h-20 rounded-xl 
+                                flex-col text-green-500 rounded-xl
+                                relative group w-20 h-20 
                                 flex items-center justify-center 
-                                transition-all duration-300 ease-in-out
+                                transition-all duration-600 ease-in-out
                                 transform hover:scale-110
-                                hover:bg-gray-800
+                                hover:border border-green-500 p-1
                                 shadow-md hover:shadow-xl
                             `}
                         >

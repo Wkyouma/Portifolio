@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../../Projetos.json";
 import Tag from './Tag/index'
+import TituloV2 from "../../Titulo/TituloV2";
 
 const ProjectSlider = () => {
   const [currentProject, setCurrentProject] = useState(0);
@@ -18,7 +19,8 @@ const ProjectSlider = () => {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col items-center justify-center p-8">
+    <div className="w-full h-full relative flex flex-col p-8">
+         <TituloV2>Projetos</TituloV2>
       <div className="absolute inset-y-1/2 transform -translate-y-1/2 left-0 right-0 flex items-center justify-between px-4">
         <button
           onClick={prevProject}
@@ -33,8 +35,9 @@ const ProjectSlider = () => {
           ❯
         </button>
       </div>
-
-      <div className="bg-zinc-800/50 h-[500px] flex items-center justify-center p-12 w-full shadow-lg shadow-zinc-900">
+   
+      <div className="h-[500px] flex items-center justify-center p-12 min-w-[100%] w-11/12  ">
+    
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentProject}
@@ -44,13 +47,12 @@ const ProjectSlider = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="flex items-center w-full justify-center gap-8"
           >
-            <img
-              className="w-2/4 rounded-xl min-h-96 border border-green-500
-              hover:shadow-[0_15px_40px_rgba(34,197,94,0.2)] transition-all duration-300"
-              src={projects[currentProject].images[0]}
-              alt="Projeto"
-            />
-            
+           <img
+            className="w-2/4 rounded-xl min-h-96 min-w-[50%] border border-green-500
+            hover:shadow-[0_15px_40px_rgba(34,197,94,0.2)] transition-all duration-300"
+            src={projects[currentProject].images[0]}
+            alt="Projeto"
+          />
             <div className="flex flex-col items-center w-2/4 space-y-4">
               <h2 className="text-3xl font-semibold text-green-500">{projects[currentProject].title}</h2>
               <p className="text-lg text-gray-300">{projects[currentProject].description}</p>

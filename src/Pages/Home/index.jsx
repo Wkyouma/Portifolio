@@ -3,21 +3,21 @@ import { Element, Link } from 'react-scroll';
 import { MdKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { motion } from 'framer-motion'; 
 import Titulo from '../../Componentes/Titulo';
-import Subtitulo from '../../Componentes/Subtitulo';
+import Subtitulo from '../../Componentes/Titulo/Subtitulo';
 import Section from '../../Componentes/Section';
 import TechIcons from '../../Componentes/TechIcons';
 import AboutSection from '../../Componentes/Section/AboutSection';
 import Button from '../../Componentes/Button';
-import retroOld from '/Galeria/city3.gif';
-import cowboy from '/Galeria/city2.gif';
-import retro from '/Galeria/city7.gif';
+import retroOld from '/Galeria/FM9Y.gif';
+import cowboy from '/Galeria/as.gif';
+import retro from '/Galeria/retro.gif';
 import ashita from '/Galeria/Ashita.gif';
-import anime from '/Galeria/city5.gif';
+import anime from '/Galeria/anime.gif';
 import lain from '/Galeria/lain.gif';
-import cyber from '/Galeria/Cyber.gif';
-import Squares from '../../Componentes/FormSection/Squares/Squares';
+import cyber from '/Galeria/28vB.gif';
 import ProjectSlider from '../../Componentes/Section/Projetos';
 import FormSection from '../../Componentes/FormSection';
+import Cript from '../../Componentes/Titulo/Cript';
 
 const backgrounds = [
    {name :"Screen-00", url: `url(${ashita})`},
@@ -31,23 +31,6 @@ const backgrounds = [
 
 const Home = () => {
     const [background, setBackground] = useState(backgrounds[0]);
-    const [isScrolled, setIsScrolled] = useState(false); 
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            if (scrollY > 500) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const handleNextBackground = () => {
         const currentIndex = backgrounds.indexOf(background);
@@ -66,8 +49,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative z-0 bg-gradient-to-t from-zinc-900 to-black"
-        >
+            className="relative z-0 bg-gradient-to-b from-stone-900 to-black">
             <Element name='Home'>
                 <div 
                     className={`h-[100vh] sm:h-auto bg-cover bg-center relative transition-colors duration-300`}
@@ -80,9 +62,9 @@ const Home = () => {
                     <div className="h-screen inset-0 bg-green-950/20 z-50"></div>
                     <div className="absolute inset-0 m-2 max-h-svh flex justify-center items-center flex-col text-center z-10 border">
                         <div className="absolute bottom-2 right-2 z-50 flex space-x-4">
-                            <button onClick={handlePreviousBackground} className="text-white text-3xl"><MdKeyboardDoubleArrowLeft size={50}/></button>
+                            <button onClick={handlePreviousBackground} className="text-white text-3xl hover:text-green-400"><MdKeyboardDoubleArrowLeft size={50}/></button>
                             <h1 className='flex items-center font-mono text-3xl '>{background.name}</h1>
-                            <button onClick={handleNextBackground} className="text-white text-3xl"><MdOutlineKeyboardDoubleArrowRight size={50}/></button>
+                            <button onClick={handleNextBackground} className="text-white text-3xl hover:text-green-400"><MdOutlineKeyboardDoubleArrowRight size={50}/></button>
                         </div>
                         <div style={{ marginTop: '4rem' }}></div>
                         <Titulo className="text-3xl sm:text-4xl">Igor <span className='text-green-300'>Terplak</span></Titulo>
@@ -121,21 +103,49 @@ const Home = () => {
                                 <span>{backgrounds.indexOf(background)}</span>
                             </div>
                         </div>
-                        <h1 className="absolute bottom-0 left-0 mb-4 ml-4 font-mono text-3xl sm:text-4xl text-white z-10 hidden sm:block hover:text-green-400  duration-150">WELCOME</h1>
+                        <Cript text={"Welcome"}></Cript>
                     </div>
                 </div>
             </Element>         
-            <TechIcons />
+
+
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.30 }}
+                transition={{ duration: 0.5 }}
+                className=' border-b-2 border-green-500'
+            >
+                <TechIcons />
+            </motion.div>
+
             <Element id='Sobre'>
-                <span className='text-white text-xs sm:text-5xl'>___________________________________________________________</span>
-                <AboutSection  />
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <AboutSection />
+                </motion.div>
             </Element>
+
             <Section id="projetos">
-                <Titulo>Projetos Recentes</Titulo>
-                <ProjectSlider></ProjectSlider>
+      
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <ProjectSlider />
+                </motion.div>
             </Section>
+
             <Section id="contato">
-               <FormSection></FormSection>
+        
+                    <FormSection />
+
             </Section>
         </motion.div>
     );
