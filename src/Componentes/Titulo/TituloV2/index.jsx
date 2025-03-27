@@ -2,7 +2,7 @@ import { motion} from "framer-motion";
 
 export default function({children}){
     return(
-        <div className='flex ml-20 mt-20'>
+        <div className='flex ml-20 mt-20 mb-10'>
         <motion.h1
         initial={{ opacity: 0, x: -100 }} 
         animate={{ opacity: 1, x: 0 }} 

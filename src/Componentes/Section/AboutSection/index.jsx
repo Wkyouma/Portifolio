@@ -37,12 +37,12 @@ const AboutSection = () => {
                         <motion.div 
                             initial={{ y: 50 }}
                             animate={{ y: 0 }}
-                            className="border-t-2 border-green-400 p-8 md:p-12 bg-black/40 "
+                            className="border-t-2 border-green-400 p-4 sm:p-8 md:p-12 bg-black/40"
                         >
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     onClick={toggleContent}
-                                    className="mb-6 inline-flex items-center gap-2 px-6 py-3 rounded-md bg-green-500/20 text-white font-mono border border-green-500/30 hover:bg-green-500/30 hover:border-green-400 transition-all duration-300 group"
+                                    className="mb-4 md:mb-6 inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-md bg-green-500/20 text-white font-mono text-sm md:text-base border border-green-500/30 hover:bg-green-500/30 hover:border-green-400 transition-all duration-300 group"
                                 >
                                     <span className="relative flex items-center gap-2">
                                         {profissional ? "Mostrar conteúdo pessoal" : "Mostrar conteúdo profissional"}
@@ -63,11 +63,11 @@ const AboutSection = () => {
                                     </div>
                                 </motion.div>
 
-                                <div className="lg:w-2/3 space-y-8 text-center lg:text-left">
+                                <div className="lg:w-2/3 space-y-4 md:space-y-8 text-center lg:text-left">
                                     {profissional ? (
                                         <>
                                           <motion.div 
-                                                className="grid grid-cols-2 md:grid-cols-3 gap-4"
+                                                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"
                                                 initial={{ opacity: 0, y: 20 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ staggerChildren: 0.2 }}
@@ -86,7 +86,7 @@ const AboutSection = () => {
                                             <motion.div 
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
-                                                className="font-mono text-gray-300 text-sm md:text-base space-y-4 relative"
+                                                className="font-mono text-gray-300 text-xs sm:text-sm md:text-base space-y-3 md:space-y-4 relative"
                                             >
                                                 <p>
                                                     Sou estudante do 5º semestre de Ciência da Computação na PUCPR, com foco em 
@@ -124,7 +124,7 @@ const AboutSection = () => {
                                     ) : (
                                         <div className="flex flex-col text-center lg:text-left">
                                             <span className="font-semibold text-white">Sobre meu lado pessoal...</span>
-                                            <p className="text-lg text-gray-300">
+                                            <p className="text-sm sm:text-base text-gray-300">
                                                 No meu tempo livre, gosto de desenhar, tocar violão, guitarra e violino, além de assistir a filmes.  
                                                 Apesar de meu foco ser tecnologia, também valorizo momentos desconectados, onde posso relaxar e aproveitar outras áreas da vida.  
                                                 Gosto de aprender novas habilidades quando necessário, sempre buscando melhorar e evoluir, tanto no lado profissional quanto pessoal.

@@ -47,7 +47,7 @@ const TechIcons = () => {
                                 transition-all duration-600 ease-in-out
                                 transform hover:scale-110
                                 hover:border border-green-500 p-1
-                                shadow-md hover:shadow-xl
+                                shadow-md hover:shadow-xl font-mono 
                             `}
                         >
                             <tech.Icon 

@@ -55,37 +55,40 @@ const Modal = ({ isOpen, onClose }) => {
         >
             
 
-            <nav className="relative">
-                <div className="flex flex-col items-center gap-6">
+            <nav className="relative w-full max-w-sm mx-auto px-4">
+                <div className="flex flex-col items-center gap-4 md:gap-6">
                     <MenuItem 
                         icon={FaInstagram} 
                         text="Instagram" 
                         onClick={handleInstagram}
+                        className="w-full"
                     />
                     <MenuItem 
                         icon={FaLinkedin} 
                         text="Linkedin" 
                         onClick={handleLinkedin}
+                        className="w-full"
                     />
                     <MenuItem 
                         icon={FaCode} 
                         text="Serviços" 
                         onClick={handleServicos}
+                        className="w-full"
                     />
                     <MenuItem 
                         icon={MdEmail} 
                         text="Contato" 
                         onClick={handleContato}
+                        className="w-full"
                     />
                     <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    onClick={onClose}
-                    className=" flex justify-center items-center bg-red-800 hover:bg-red-600 text-white w-16 h-16 rounded-full transition-colors">
-                    <IoMdClose size={24} />
-                </motion.button>
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        onClick={onClose}
+                        className="flex justify-center items-center bg-red-800 hover:bg-red-600 text-white w-12 h-12 md:w-16 md:h-16 rounded-full transition-colors">
+                        <IoMdClose className="w-6 h-6 md:w-8 md:h-8" />
+                    </motion.button>
                 </div>
-                
             </nav>
         </motion.div>
     );

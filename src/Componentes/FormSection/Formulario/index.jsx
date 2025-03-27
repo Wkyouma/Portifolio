@@ -15,7 +15,7 @@ const Formulario = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { nome, email,assunto, mensagem } = formData;
+        const { nome, email, assunto, mensagem } = formData;
 
         try {
             const sendEmail = window.emailjs
@@ -35,7 +35,7 @@ const Formulario = () => {
 
             if (response.ok || response.text === "OK") {
                 setStatus("Email enviado com sucesso!");
-                setFormData({ nome: "", email: "", assunto, mensagem: "" });
+                setFormData({ nome: "", email: "", assunto: "", mensagem: "" });
             } else {
                 setStatus("Erro ao enviar email.");
             }
@@ -46,12 +46,15 @@ const Formulario = () => {
     };
 
     return (
-        <div className="absolute inset-0 flex justify-center items-center ">
-            <div className="bg-zinc-900 h-auto w-full max-w-7xl p-4 sm:p-10 shadow-lg border-t-2 border-green-400">
-                <h2 className="text-green-500 text-3xl sm:text-4xl font-mono mb-4 mt-2 text-center">Entre em Contato</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="flex flex-col sm:flex-row items-center mb-10 gap-4">
-                        <div className="flex-1 space-y-4 w-full sm:w-auto">
+        <div className="absolute inset-0 flex justify-center items-center px-4 py-6 md:p-8">
+            <div className="bg-zinc-900 w-full max-w-4xl rounded-lg shadow-lg border-t-2 border-green-400">
+                <h2 className="text-green-500 text-2xl sm:text-3xl md:text-4xl font-mono mb-6 mt-6 text-center">
+                    Entre em Contato
+                </h2>
+                
+                <form onSubmit={handleSubmit} className="p-4 sm:p-6 md:p-8">
+                    <div className="flex flex-col lg:flex-row gap-6">
+                        <div className="flex-1 space-y-4">
                             <Input
                                 Label="Nome:"
                                 name="nome"
@@ -77,11 +80,13 @@ const Formulario = () => {
                                 required
                             />
                         </div>
-                        <div className="flex-1 w-full sm:w-auto">
-                            <label className="text-green-500 flex">Mensagem:</label>
+                        <div className="flex-1 flex flex-col">
+                            <label className="text-green-500 mb-1">Mensagem:</label>
                             <textarea
                                 name="mensagem"
-                                className="bg-zinc-800 rounded-md w-full h-48 text-white p-2 resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
+                                className="bg-zinc-800 rounded-md w-full h-40 sm:h-48 text-white p-3 resize-none 
+                                    focus:outline-none focus:ring-1 focus:ring-green-500
+                                    placeholder:text-zinc-500"
                                 placeholder="Digite sua mensagem"
                                 value={formData.mensagem}
                                 onChange={handleChange}
@@ -89,17 +94,24 @@ const Formulario = () => {
                             />
                             <button
                                 type="submit"
-                                className="bg-green-500 hover:bg-green-600 w-full sm:w-40 px-6 py-3 rounded-md transition duration-300 z-20 text-white font-bold mt-4"
+                                className="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold
+                                    w-full sm:w-auto px-6 py-3 rounded-md transition duration-300
+                                    hover:shadow-[0_5px_15px_rgba(34,197,94,0.2)]"
                             >
-                                Enviar
+                                Enviar Mensagem
                             </button>
                         </div>
                     </div>
                 </form>
+
                 {status && (
-                    <p className={`text-center mt-4 ${status.includes('sucesso') ? 'text-green-500' : 'text-red-500'}`}>
-                        {status}
-                    </p>
+                    <div className="p-4 text-center">
+                        <p className={`text-base sm:text-lg animate-fade-in ${
+                            status.includes('sucesso') ? 'text-green-500' : 'text-red-500'
+                        }`}>
+                            {status}
+                        </p>
+                    </div>
                 )}
             </div>
         </div>

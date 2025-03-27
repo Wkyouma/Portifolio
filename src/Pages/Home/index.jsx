@@ -61,15 +61,15 @@ const Home = () => {
                 >
                     <div className="h-screen inset-0 bg-green-950/20 z-50"></div>
                     <div className="absolute inset-0 m-2 max-h-svh flex justify-center items-center flex-col text-center z-10 border">
-                        <div className="absolute bottom-2 right-2 z-50 flex space-x-4">
-                            <button onClick={handlePreviousBackground} className="text-white text-3xl hover:text-green-400"><MdKeyboardDoubleArrowLeft size={50}/></button>
-                            <h1 className='flex items-center font-mono text-3xl '>{background.name}</h1>
-                            <button onClick={handleNextBackground} className="text-white text-3xl hover:text-green-400"><MdOutlineKeyboardDoubleArrowRight size={50}/></button>
+                        <div className="absolute bottom-2 right-2 z-50 flex space-x-2 md:space-x-4">
+                            <button onClick={handlePreviousBackground} className="text-white text-xl md:text-3xl hover:text-green-400"><MdKeyboardDoubleArrowLeft className="w-8 h-8 md:w-12 md:h-12"/></button>
+                            <h1 className='flex items-center font-mono text-lg md:text-3xl'>{background.name}</h1>
+                            <button onClick={handleNextBackground} className="text-white text-xl md:text-3xl hover:text-green-400"><MdOutlineKeyboardDoubleArrowRight className="w-8 h-8 md:w-12 md:h-12"/></button>
                         </div>
-                        <div style={{ marginTop: '4rem' }}></div>
-                        <Titulo className="text-3xl sm:text-4xl">Igor <span className='text-green-300'>Terplak</span></Titulo>
-                        <Subtitulo className="text-lg sm:text-xl md:text-2xl">Desenvolvedor Front-end | Designer Criativo</Subtitulo>
-                        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
+                        <div className="mt-16 md:mt-24"></div>
+                        <Titulo className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Igor <span className='text-green-300'>Terplak</span></Titulo>
+                        <Subtitulo className="text-base sm:text-xs md:text-xl lg:text-2xl px-4">Desenvolvedor Front-end | Designer Criativo</Subtitulo>
+                        <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4">
                             <motion.div
                                 initial={{ x: -100, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
