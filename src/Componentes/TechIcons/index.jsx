@@ -42,11 +42,11 @@ const TechIcons = () => {
                             key={tech.name} 
                             className={`
                                 flex-col text-green-500 rounded-xl
-                                relative group w-20 h-20 
+                                relative group w-24 h-24
                                 flex items-center justify-center 
                                 transition-all duration-600 ease-in-out
                                 transform hover:scale-110
-                                hover:border border-green-500 p-1
+                                hover:bg-stone-900 p-1
                                 shadow-md hover:shadow-xl font-mono 
                             `}
                         >

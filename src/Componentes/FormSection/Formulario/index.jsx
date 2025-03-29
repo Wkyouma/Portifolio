@@ -56,7 +56,7 @@ const Formulario = () => {
                     <div className="flex flex-col lg:flex-row gap-6">
                         <div className="flex-1 space-y-4">
                             <Input
-                                Label="Nome:"
+                                Label="Nome"
                                 name="nome"
                                 placeholder="Digite seu nome"
                                 value={formData.nome}
@@ -64,7 +64,7 @@ const Formulario = () => {
                                 required
                             />
                             <Input
-                                Label="Email:"
+                                Label="Email"
                                 name="email"
                                 placeholder="Digite seu email"
                                 value={formData.email}
@@ -72,7 +72,7 @@ const Formulario = () => {
                                 required
                             />
                             <Input
-                                Label="Assunto:"
+                                Label="Assunto"
                                 name="assunto"
                                 placeholder="Digite o motivo do contato"
                                 value={formData.assunto}
@@ -81,7 +81,7 @@ const Formulario = () => {
                             />
                         </div>
                         <div className="flex-1 flex flex-col">
-                            <label className="text-green-500 mb-1">Mensagem:</label>
+                            <label className="text-green-500 mb-1">Mensagem</label>
                             <textarea
                                 name="mensagem"
                                 className="bg-zinc-800 rounded-md w-full h-40 sm:h-48 text-white p-3 resize-none 

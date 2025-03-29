@@ -114,20 +114,14 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.30 }}
                 transition={{ duration: 0.5 }}
-                className=' border-b-2 border-green-500'
             >
                 <TechIcons />
             </motion.div>
 
             <Element id='Sobre'>
-                <motion.div
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.5 }}
-                >
+               
                     <AboutSection />
-                </motion.div>
+           
             </Element>
 
             <Section id="projetos">

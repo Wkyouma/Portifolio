@@ -29,11 +29,8 @@ const Modal = ({ isOpen, onClose }) => {
         onClose();
     };
 
-    const handleServicos = () => {
-        onClose();
-    };
-
     const handleContato = () => {
+        window.open('https://mail.google.com/mail/u/0/?pli=1#inbox','_blank')
         onClose();
     };
 
@@ -67,12 +64,6 @@ const Modal = ({ isOpen, onClose }) => {
                         icon={FaLinkedin} 
                         text="Linkedin" 
                         onClick={handleLinkedin}
-                        className="w-full"
-                    />
-                    <MenuItem 
-                        icon={FaCode} 
-                        text="Serviços" 
-                        onClick={handleServicos}
                         className="w-full"
                     />
                     <MenuItem 
