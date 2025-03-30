@@ -124,7 +124,6 @@ const AboutSection = () => {
                                             <span className="font-semibold text-white">Sobre meu lado pessoal...</span>
                                             <p className="text-sm sm:text-base text-gray-300">
                                                 No meu tempo livre, gosto de desenhar, tocar violão, guitarra e violino, além de assistir a filmes.  
-                                                Apesar de meu foco ser tecnologia, também valorizo momentos desconectados, onde posso relaxar e aproveitar outras áreas da vida.  
                                                 Gosto de aprender novas habilidades quando necessário, sempre buscando melhorar e evoluir, tanto no lado profissional quanto pessoal.
                                             </p>
                                             <div className="flex justify-center lg:justify-start space-x-4 mt-4">
