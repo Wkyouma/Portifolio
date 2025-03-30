@@ -107,7 +107,7 @@ const AboutSection = () => {
                                             </motion.div>
                                             <div className="flex gap-2">
                                              <motion.a 
-                                            href="./CV/Currículo (14).pdf"
+                                            href="./CV/Currículo.pdf"
                                             download="Curriculo_Igor_Gutierrez.pdf"
                                             className="flex ml-5 items-center gap-2 px-6 py-3 rounded-md bg-green-500/20 text-white font-mono border border-green-500/30 hover:bg-green-500/30 hover:border-green-400 transition-all duration-300 group"
                                             whileHover={{ scale: 1.05 }}
