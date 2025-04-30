@@ -56,8 +56,27 @@
       "TSX"
     ],
     "images": [
-      "./Galeria/RpgMaker (1).png",
+ 
       "./Galeria/RpgMaker (2).png"
+    ]
+  },
+  {
+    "title": "Looksy",
+    "description": "Looksy é um projeto completo onde é possível armazenar suas imagens em um banco de dados e visualizá-las em uma galeria e pode organiza-las. O projeto foi desenvolvido utilizando React e Node.js, com um banco de dados MySQL para armazenamento das imagens.",
+    "link": "",
+    "Repositorio": "https://github.com/Wkyouma/Looksy",
+    "tecnologias":[
+      "React + Vite",
+      "Tailwind",
+      "express",
+      "Mysql",
+      "NodeJs",
+      "Cors"
+    ],
+    "images": [
+      "./Galeria/Looksy.png",
+      "./Galeria/Looksy1.png",
+      "./Galeria/Looksy2.png"
     ]
   }
 ]
