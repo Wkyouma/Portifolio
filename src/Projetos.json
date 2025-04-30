@@ -62,7 +62,7 @@
   },
   {
     "title": "Looksy",
-    "description": "Looksy é um projeto completo onde é possível armazenar suas imagens em um banco de dados e visualizá-las em uma galeria e pode organiza-las. O projeto foi desenvolvido utilizando React e Node.js, com um banco de dados MySQL para armazenamento das imagens.",
+    "description": "Looksy é um projeto completo onde é possível armazenar suas imagens em um banco de dados, visualizá-las em uma galeria e organiza-las. O projeto foi desenvolvido utilizando React e Node.js, com um banco de dados MySQL para armazenamento das imagens.",
     "link": "",
     "Repositorio": "https://github.com/Wkyouma/Looksy",
     "tecnologias":[
