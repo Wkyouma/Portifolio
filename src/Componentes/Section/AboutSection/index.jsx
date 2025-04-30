@@ -18,14 +18,12 @@ const AboutSection = () => {
             <div className="w-full relative">
                 <div 
                     className="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed opacity-30 z-0"
-                    style={{ 
-                        backgroundImage: `url(${teste})`,
-                        backgroundBlendMode: 'overlay',
-                    }}
+                   
                 />
                 
             
                 <div className="relative z-10">
+              
                      <motion.div
                                         initial={{ opacity: 0, y: 100 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -33,6 +31,7 @@ const AboutSection = () => {
                                         transition={{ duration: 0.5 }}
                                     >
                     <TituloV2>Sobre mim</TituloV2>
+                    
                     <motion.div 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -43,12 +42,12 @@ const AboutSection = () => {
                         <motion.div 
                             initial={{ y: 50 }}
                             animate={{ y: 0 }}
-                            className="border-t-2 border-green-400 p-4 sm:p-8 md:p-12 bg-black/40 mb-20"
+                            className="border-t-2 border-green-400 p-4 sm:p-8 md:p-12 bg-neutral-900 mb-20"
                         >
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     onClick={toggleContent}
-                                    className="mb-4 md:mb-6 inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-md bg-green-500/20 text-white font-mono text-sm md:text-base border border-green-500/30 hover:bg-green-500/30 hover:border-green-400 transition-all duration-300 group"
+                                    className="mb-4 md:mb-6 inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-md bg-green-600 text-white font-mono text-sm md:text-base border border-green-500/30 hover:bg-green-700 transition-all duration-300 group"
                                 >
                                     <span className="relative flex items-center gap-2">
                                         {profissional ? "Mostrar conteúdo pessoal" : "Mostrar conteúdo profissional"}
@@ -109,11 +108,11 @@ const AboutSection = () => {
                                              <motion.a 
                                             href="./CV/Currículo.pdf"
                                             download="Curriculo_Igor_Gutierrez.pdf"
-                                            className="flex ml-5 items-center gap-2 px-6 py-3 rounded-md bg-green-500/20 text-white font-mono border border-green-500/30 hover:bg-green-500/30 hover:border-green-400 transition-all duration-300 group"
+                                            className="flex ml-5 items-center gap-2 px-6 py-3 rounded-md bg-green-600 text-white font-mono border border-none  hover:bg-green-700 transition-all duration-300 group"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
-                                            <HiDocumentCheck className="text-2xl text-green-400 group-hover:rotate-12 transition-transform duration-300" />
+                                            <HiDocumentCheck className="text-2xl text-white group-hover:rotate-12 transition-transform duration-300" />
                                             <span className="text-sm">Download CV</span>
                                         </motion.a>
 
@@ -153,6 +152,7 @@ const AboutSection = () => {
                 </motion.div>
                 </div>
             </div>
+            
         </Section>
     );
 }
