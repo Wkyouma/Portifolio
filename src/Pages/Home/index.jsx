@@ -22,10 +22,10 @@ import Cript from '../../Componentes/Titulo/Cript';
 const backgrounds = [
    {name :"Screen-00", url: `url(${ashita})`},
   
-   {name :"Screen-02", url:`url(${cyber})`},
-   {name :"Screen-03", url:`url(${anime})`},
-   {name :"Screen-04", url:`url(${retro})`},
-   {name :"Screen-05", url:`url(${cowboy})`}
+   {name :"Screen-01", url:`url(${cyber})`},
+   {name :"Screen-02", url:`url(${anime})`},
+   {name :"Screen-03", url:`url(${retro})`},
+   {name :"Screen-04", url:`url(${cowboy})`}
 ];
 
 const Home = () => {
