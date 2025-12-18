@@ -46,7 +46,7 @@ const Cabecalho = () => {
             document.body.style.overflow = 'unset';
         };
     }, [isModalOpen]);
-//asda
+
     return (
         <header className={`w-full fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'}`}>
             <nav className="flex justify-between items-center p-4">
@@ -87,4 +87,5 @@ const Cabecalho = () => {
         </header>
     );
 }
+//asdasd
 export default Cabecalho;
