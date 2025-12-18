@@ -46,11 +46,11 @@ const Cabecalho = () => {
             document.body.style.overflow = 'unset';
         };
     }, [isModalOpen]);
-
+//asda
     return (
         <header className={`w-full fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'}`}>
             <nav className="flex justify-between items-center p-4">
-                <ul className="cursor-pointer flex space-x-4 m-1 text-white gap-3 font-mono ">
+                <ul className="cursor-pointer flex space-x-4 m-1 text-white gap-4 font-mono ">
                     {navItems.map((item, index) => (
                         <motion.li 
                             key={item.name}
